@@ -4,71 +4,148 @@ POPUP "&Файлы"
     MENUITEM "Запустить объект под курсором с параметрами", em_vim_0146
     MENUITEM "Запустить об/под курс. с параметрами (админ.)", em_vim_0147
     MENUITEM SEPARATOR
-    MENUITEM "&Запуск файла под курсором\tEnter", $3E9
-    MENUITEM "Запуск прогр&аммы от имени...", $AF0
-    MENUITEM "Открыть с помо&щью...", $1FB
-    MENUITEM "Внутренние ассо&циации (только в TC)...", $207
-    MENUITEM "&Метка диска...", $1F9
+    MENUITEM "&Запуск файла под курсором\tEnter", cm_Return
+    MENUITEM "Запуск прогр&аммы от имени...", cm_OpenAsUser
+    MENUITEM "Открыть с помо&щью...", cm_Associate
+    MENUITEM "Внутренние ассо&циации (только в TC)...", cm_InternalAssociate
+    MENUITEM "&Метка диска...", cm_VolumeId
     MENUITEM SEPARATOR
     MENUITEM "Объект под курсором в автозагрузку с Windows", em_vim_0733
     MENUITEM SEPARATOR
 ;   MENUITEM "Выд.объектам назначить текущую дату (админ.)", em_vim_0734
     MENUITEM "Выделенным объектам назначить дату и время", em_vim_0800
-    MENUITEM "&Изменить Атрибуты...", $1F6
+    MENUITEM "&Изменить Атрибуты...", cm_SetAttrib
 ;   MENUITEM "Изменить Атрибуты (с рекурсией)", em_vim_0565
     MENUITEM "Изменить Атрибуты файлам  по типу (рекурсия)", em_vim_0566
-    MENUITEM "Показать диалог сво&йств\tAlt+Enter", $1FE
+    MENUITEM "Показать диалог сво&йств\tAlt+Enter", cm_VersionInfo
     MENUITEM "Информация о программе под курсором", em_vim_0459
-    MENUITEM "&Комментарий к файлу...\tCtrl+Z", $A8C
-    MENUITEM "Подсчитать занимаемое &место\tCtrl+L", $1F7
+    MENUITEM "&Комментарий к файлу...\tCtrl+Z", cm_EditComment
+    MENUITEM "Подсчитать занимаемое &место", cm_GetFileSpace
     MENUITEM SEPARATOR
     MENUITEM "Синхронизовать Каталоги", cm_FileSync
     MENUITEM SEPARATOR
-    MENUITEM "Сравнить по содер&жимому...", $7E6
-    MENUITEM "Сравнить внутр&енним инструментом...", $7F8
+    MENUITEM "Сравнить по содер&жимому...", cm_CompareFilesByContent
+    MENUITEM "Сравнить внутр&енним инструментом...", cm_IntCompareFilesByContent
 ;  
     POPUP "Пе&чать"
-        MENUITEM "&Список файлов...", $7EB
-        MENUITEM "Список файлов с &подкаталогами...", $7EC
-        MENUITEM "&Файл (содержимое)\tCtrl+F9", $1F8
+        MENUITEM "&Список файлов...", cm_PrintDir
+        MENUITEM "Список файлов с &подкаталогами...", cm_PrintDirSub
+        MENUITEM "&Файл (содержимое)\tCtrl+F9", cm_PrintFile
     END_POPUP
 ;    
     MENUITEM SEPARATOR
     MENUITEM "Быстрый просмотр в отдельном окне", em_vim_0793
-    MENUITEM "Просмотр с отк&лючёнными плагинами\tAlt+Shift+F3", $3EE
+    MENUITEM "Просмотр с отк&лючёнными плагинами\tAlt+Shift+F3", cm_ListInternalOnly
     MENUITEM SEPARATOR
-    MENUITEM "&Упаковать...\tAlt+F5", $1FC
-    MENUITEM "&Распаковать...\tAlt+F9", $1FD
-    MENUITEM "Протестировать ар&хив(ы)\tAlt+Shift+F9", $206
-    MENUITEM "Создать &ярлык...\tCtrl+Shift+F5", $3EC
+    MENUITEM "&Упаковать...\tAlt+F5", cm_PackFiles
+    MENUITEM "&Распаковать...\tAlt+F9", cm_UnpackFiles
+    MENUITEM "Протестировать ар&хив(ы)\tAlt+Shift+F9", cm_TestArchive
+    MENUITEM "Создать &ярлык...\tCtrl+Shift+F5", cm_CreateShortcut
     MENUITEM SEPARATOR
-    MENUITEM "Разби&ть файл...", $230
-    MENUITEM "Со&брать файлы...", $231
-    MENUITEM "Кодироват&ь (MIME, UUE, XXE)...", $232
-    MENUITEM "&Декодировать (MIME, UUE, XXE, BinHex)...", $233
-    MENUITEM "По&считать CRC-суммы (CRC32, MD5, SHA1)...", $234
-    MENUITEM "Про&верить CRC-суммы (CRC32, MD5, SHA1)", $235
+    MENUITEM "Разби&ть файл...", cm_Split
+    MENUITEM "Со&брать файлы...", cm_Combine
+    MENUITEM "Кодироват&ь (MIME, UUE, XXE)...", cm_Encode
+    MENUITEM "&Декодировать (MIME, UUE, XXE, BinHex)...", cm_Decode
+    MENUITEM "По&считать CRC-суммы (CRC32, MD5, SHA1)...", cm_CRCcreate
+    MENUITEM "Про&верить CRC-суммы (CRC32, MD5, SHA1)", cm_CRCcheck
+END_POPUP
+;
+POPUP "Ви&д"
+;
+    POPUP "Рас&ширенные настройки"
+        MENUITEM "Вертикальная Панель инстр&ументов: вкл/выкл", cm_VisButtonbar2
+        MENUITEM "Панель инстр&ументов: вкл/выкл", cm_VisButtonbar
+        MENUITEM SEPARATOR
+        MENUITEM "Кнопки диско&в: вкл/выкл", cm_VisDriveButtons
+        MENUITEM "Панели выбора дисков: &две/одна", cm_VisTwoDriveButtons
+        MENUITEM "Окн&о выбора диска: вкл/выкл", cm_VisDriveCombo
+        MENUITEM "Использов&ать вкладки папок: вкл/выкл", cm_VisDirTabs
+        MENUITEM "За&головок файловой панели: вкл/выкл", cm_VisCurDir
+        MENUITEM "Использовать &цепочки навигации: вкл/выкл", cm_VisBreadCrumbs
+        MENUITEM "Кнопки и&стории и избранных каталогов: вкл/выкл", cm_VisHistHotButtons
+        MENUITEM "&Заголовки табуляторов: вкл/выкл", cm_VisTabHeader
+        MENUITEM "Строка состоя&ния: вкл/выкл", cm_VisStatusbar
+        MENUITEM "&Командная строка: вкл/выкл", cm_VisCmdLine
+        MENUITEM "&Функциональные кнопки: вкл/выкл", cm_VisKeyButtons
+        MENUITEM SEPARATOR
+        MENUITEM "Кнопки дисков: плоские/о&бычные", cm_VisFlatDriveButtons
+        MENUITEM "Интерфейс основного окна: &плоский/обычный", cm_VisFlatInterface
+        MENUITEM "Стил&ь Windows XP/Vista/7 для фона: вкл/выкл", cm_VisXPThemeBackground
+        MENUITEM SEPARATOR
+        MENUITEM "Сортировать каталоги: по им&ени/как файлы", cm_SwitchDirSort
+        MENUITEM "Показывать длинные &имена: вкл/выкл", cm_SwitchLongNames
+        MENUITEM "Показывать скрытые/системные фа&йлы: вкл/выкл", cm_SwitchHidSys
+        MENUITEM "Показывать имена &8.3 в нижнем регистре: вкл/выкл", cm_Switch83Names
+        MENUITEM "Показывать овер&лейные значки: вкл/выкл", cm_SwitchOverlayIcons  
+    END_POPUP
+;    
+    MENUITEM SEPARATOR
+    MENUITEM "&Краткий\tCtrl+F1", cm_SrcShort
+    MENUITEM "&Подробный\tCtrl+F2", cm_SrcLong
+    MENUITEM "Коммента&рии\tCtrl+Shift+F2", cm_SrcComments
+    MENUITEM "По&льзовательский набор колонок\tShift+F1", cm_SrcCustomViewMenu
+    MENUITEM "Пол&ьзовательский стиль оформления", cm_SrcViewModeList
+    MENUITEM "Автовыбор стиля оформления", em_vim_0789
+    MENUITEM "Просмотр &эскизов\tCtrl+Shift+F1", cm_SrcThumbs
+    MENUITEM "&Дерево каталогов\tCtrl+F8", cm_SrcTree
+;    
+    POPUP "Дерево в отдел&ьной панели\tCtrl+Shift+F8"
+        MENUITEM "&0 (Нет)", cm_SeparateTreeOff
+        MENUITEM "&1 (Одно для обеих панелей)", cm_SeparateTree1
+        MENUITEM "&2 (Два, по одному на панель)", cm_SeparateTree2
+        MENUITEM SEPARATOR
+        MENUITEM "&Переключить режим дерева", cm_SwitchSeparateTree
+        MENUITEM SEPARATOR
+;       MENUITEM "&Одно дерево: вкл/выкл", cm_ToggleSeparateTree1
+;       MENUITEM "&Два дерева: вкл/выкл", cm_ToggleSeparateTree2
+    END_POPUP
+;    
+    MENUITEM SEPARATOR
+    MENUITEM "Показать размеры все&х папок\tAlt+Shift+Enter", cm_CountDirContent
+    MENUITEM "Обновить содер&жимое панели\tCtrl+R", cm_RereadSource
+    MENUITEM SEPARATOR
+    MENUITEM "Получатель &= Источнику", cm_MatchSrc
+    MENUITEM SEPARATOR
+    MENUITEM "Вс&е файлы\tCtrl+F10", cm_SrcAllFiles
+    MENUITEM "Програ&ммы\tCtrl+F11", cm_SrcExecs
+    MENUITEM "*.*", cm_SrcUserSpec
+    MENUITEM "&Фильтр...\tCtrl+F12", cm_SrcUserDef
+    MENUITEM "Показать только выделенные об&ъекты", cm_ShowOnlySelected
+    MENUITEM SEPARATOR
+    MENUITEM "По &имени\tCtrl+F3", cm_SrcByName
+    MENUITEM "По &типу\tCtrl+F4", cm_SrcByExt
+    MENUITEM "По дате/&времени\tCtrl+F5", cm_SrcByDateTime
+    MENUITEM "По ра&змеру\tCtrl+F6", cm_SrcBySize
+    MENUITEM "Без &сортировки\tCtrl+F7", cm_SrcUnsorted
+    MENUITEM SEPARATOR
+    MENUITEM "В обратном пор&ядке", cm_SrcNegOrder
+    MENUITEM SEPARATOR
+    MENUITEM "Раскрасить/снять раскраску выд. объектам\tCtrl+INS", em_vim_0736
+    MENUITEM "Выд. папкам значок выбранный в диалоге", em_vim_0737
+    MENUITEM "Выд. папке значок (из ico или exe внутри п-ки)", em_vim_0738
+    MENUITEM "Выд. папке значок (из exe или ico внутри п-ки)", em_vim_0739
+    MENUITEM "Отменить назначение значков выд. папкам", em_vim_0740
 END_POPUP
 ;
 POPUP "Вк&ладки"
-    MENUITEM "Использов&ать вкладки папок: вкл/выкл", $B64
+    MENUITEM "Использов&ать вкладки папок: вкл/выкл", cm_VisDirTabs
     MENUITEM SEPARATOR
-    MENUITEM "&Новая вкладка для текущей папки\tCtrl+T", $BB9
-    MENUITEM "Новая вкладка для текущей папки в &фоне\tCtrl+Shift+T", $BBA
-    MENUITEM "Блокировка/&Разблокировка вкладки", $BC2
-    MENUITEM "&Частичная блокировка/Разблокировка", $BC4
+    MENUITEM "&Новая вкладка для текущей папки\tCtrl+T", cm_OpenNewTab
+    MENUITEM "Новая вкладка для текущей папки в &фоне\tCtrl+Shift+T", cm_OpenNewTabBg
+    MENUITEM "Блокировка/&Разблокировка вкладки", cm_ToggleLockCurrentTab
+    MENUITEM "&Частичная блокировка/Разблокировка", cm_ToggleLockDcaCurrentTab
     MENUITEM SEPARATOR
-    MENUITEM "&Открыть папку в новой вкладке\tCtrl+вверх", $BBB
-    MENUITEM "Открыть папку в новой вкладке (&другая панель)\tCtrl+Shift+вверх", $BBC
+    MENUITEM "&Открыть папку в новой вкладке\tCtrl+вверх", cm_OpenDirInNewTab
+    MENUITEM "Открыть папку в новой вкладке (&другая панель)\tCtrl+Shift+вверх", cm_OpenDirInNewTabOther
     MENUITEM SEPARATOR
     MENUITEM "Загрузить вкладки из *.tab , удалив текущие", em_vim_0755
     MENUITEM "Загрузить вкладки из *.tab , добавив к текущим", em_vim_0756
     MENUITEM SEPARATOR
-    MENUITEM "Переключиться на &следующую вкладку\tCtrl+Tab", $BBD
-    MENUITEM "Переключиться на &предыдущую вкладку\tCtrl+Shift+Tab", $BBE
+    MENUITEM "Переключиться на &следующую вкладку\tCtrl+Tab", cm_SwitchToNextTab
+    MENUITEM "Переключиться на &предыдущую вкладку\tCtrl+Shift+Tab", cm_SwitchToPreviousTab
     MENUITEM SEPARATOR
-    MENUITEM "&Закрыть вкладку\tCtrl+W", $BBF
-    MENUITEM "Закрыть &все вкладки\tCtrl+Shift+W", $BC0
+    MENUITEM "&Закрыть вкладку\tCtrl+W", cm_CloseCurrentTab
+    MENUITEM "Закрыть &все вкладки\tCtrl+Shift+W", cm_CloseAllTabs
     MENUITEM SEPARATOR
     MENUITEM "Закрыть ВСЕ+забл. вкладки в Левой Панели", em_vim_0443
     MENUITEM "Закрыть ВСЕ+забл. вкладки в Правой Панели", em_vim_0444
@@ -76,7 +153,7 @@ POPUP "Вк&ладки"
     MENUITEM SEPARATOR
     MENUITEM "Показать меню вкладки", em_vim_0527
     MENUITEM SEPARATOR
-    MENUITEM "Настройка: Вкладки папок", $1E8
+    MENUITEM "Настройка: Вкладки папок", cm_DirTabsConfig
     MENUITEM SEPARATOR
     MENUITEM "Вкл/Откл цвет активной вкладке (готвые цвета)", em_vim_0652
     MENUITEM "Включить цвет активной вкладке (палитра)", em_vim_0786
@@ -84,41 +161,41 @@ POPUP "Вк&ладки"
 END_POPUP
 ;
 POPUP "&Сеть"
-    MENUITEM "Под&ключить сетевой диск...", $200
-    MENUITEM "&Отключить сетевой диск...", $201
-    MENUITEM "Открыть о&бщий доступ к каталогу...", $202
-    MENUITEM "&Закрыть общий доступ к каталогу...", $203
+    MENUITEM "Под&ключить сетевой диск...", cm_NetConnect
+    MENUITEM "&Отключить сетевой диск...", cm_NetDisconnect
+    MENUITEM "Открыть о&бщий доступ к каталогу...", cm_NetShareDir
+    MENUITEM "&Закрыть общий доступ к каталогу...", cm_NetUnshareDir
     MENUITEM SEPARATOR
-    MENUITEM "Показать, кем открыт &файл по сети", $89B
-    MENUITEM "Показать ресурсы а&дминистратора", $89C
+    MENUITEM "Показать, кем открыт &файл по сети", cm_ShowFileUser
+    MENUITEM "Показать ресурсы а&дминистратора", cm_AdministerServer
     MENUITEM SEPARATOR
 ;
     POPUP "Соединение через LPT/USB-порт..."
-        MENUITEM "&Установить соединение через LPT/USB-порт...", $8FC
-        MENUITEM "Установить д&райвер LPT (NT)", $8FD
-        MENUITEM "Уда&лить драйвер LPT (NT)", $8FE
+        MENUITEM "&Установить соединение через LPT/USB-порт...", cm_DirectCableConnect
+        MENUITEM "Установить д&райвер LPT (NT)", cm_NTinstallDriver
+        MENUITEM "Уда&лить драйвер LPT (NT)", cm_NTremoveDriver
     END_POPUP
 ;    
     MENUITEM SEPARATOR
     MENUITEM "FileZilla – FTP клиент", em_vim_0192
     MENUITEM SEPARATOR
-    MENUITEM "&Соединиться с FTP-сервером...\tCtrl+F", $226
-    MENUITEM "&Новое FTP-соединение...\tCtrl+N", $227
-    MENUITEM "&Разорвать FTP-соединение\tCtrl+Shift+F", $228
-    MENUITEM "&Прервать текущую команду", $22A
-    MENUITEM "&Возобновить прерванную загрузку...", $22B
+    MENUITEM "&Соединиться с FTP-сервером...\tCtrl+F", cm_FtpConnect
+    MENUITEM "&Новое FTP-соединение...\tCtrl+N", cm_FtpNew
+    MENUITEM "&Разорвать FTP-соединение\tCtrl+Shift+F", cm_FtpDisconnect
+    MENUITEM "&Прервать текущую команду", cm_FtpAbort
+    MENUITEM "&Возобновить прерванную загрузку...", cm_FtpResumeDownload
     MENUITEM SEPARATOR
-    MENUITEM "&Добавить в список загрузки...", $22D
-    MENUITEM "Диспетчер &фоновой пересылки...", $22F
-    MENUITEM "&Загрузка по списку...", $22E
+    MENUITEM "&Добавить в список загрузки...", cm_FtpAddToList
+    MENUITEM "Диспетчер &фоновой пересылки...", cm_OpenTransferManager
+    MENUITEM "&Загрузка по списку...", cm_FtpDownloadList
     MENUITEM SEPARATOR
-    MENUITEM "Показывать скрытые ф&айлы на сервере", $229
-    MENUITEM "Выбрать ре&жим передачи (Авто/Двоичный/Текст)\tCtrl+Shift+M", $22C
+    MENUITEM "Показывать скрытые ф&айлы на сервере", cm_FtpHiddenFiles
+    MENUITEM "Выбрать ре&жим передачи (Авто/Двоичный/Текст)\tCtrl+Shift+M", cm_FtpSelectTransferMode
 END_POPUP
 ;
 POPUP "&Конфигурация"
-    MENUITEM "&Настройка...", $1EA
-    MENUITEM "Список ком&анд Total Commander...", $B6C
+    MENUITEM "&Настройка...", cm_Config
+    MENUITEM "Список ком&анд Total Commander...", cm_CommandBrowser
     MENUITEM "Отображение информ. пользовательских команд TC VIM ", em_vim_0735
     MENUITEM SEPARATOR
     MENUITEM "М&енеджер плагинов TC Plugins Manager", em_vim_0157
@@ -154,11 +231,11 @@ POPUP "&Конфигурация"
     MENUITEM "Вкл/Откл анимацию значков в Вертикальной Панели", em_vim_0727
     MENUITEM "Вкл/Откл курсор на следующий файл при выд. пробелом", em_vim_0792
     MENUITEM SEPARATOR
-    MENUITEM "x64: Отключить перенаправление System32->SysWOW&64", $B6D
+    MENUITEM "x64: Отключить перенаправление System32->SysWOW&64", cm_SwitchX64Redirection
     MENUITEM SEPARATOR
-    MENUITEM "Сохранить &позицию", $1ED
-;   MENUITEM "Сохранить историю ката&логов", $246
-    MENUITEM "Со&хранить настройки", $244
+    MENUITEM "Сохранить &позицию", cm_ConfigSavePos
+;   MENUITEM "Сохранить историю ката&логов", cm_ConfigSaveDirHistory
+    MENUITEM "Со&хранить настройки", cm_ConfigSaveSettings
 END_POPUP
 ;
 POPUP "Создать"
@@ -239,126 +316,19 @@ POPUP "Копировать"
     MENUITEM SEPARATOR
     MENUITEM "Переключить Режим копирования : фоновый/обычный ", em_vim_0797
 END_POPUP
-;
-POPUP "Выполнить"
-    MENUITEM "Исполняемые файлы", em_vim_0145
-    MENUITEM "        Запустить выд. с параметрами", em_vim_0146
-    MENUITEM "        Запустить выд. с параметрами (администратор)", em_vim_0147
-    MENUITEM "Меню "Выполнить" и Командная строка", em_vim_0145
-;   MENUITEM "   Запустить Babun (администратор)", em_vim_2001
-;   MENUITEM "   Запустить Babun", em_vim_2002
-    MENUITEM "        Меню "Выполнить" (администратор) ", em_vim_0242
-    MENUITEM "        Меню "Выполнить"", em_vim_1242
-    MENUITEM "        Командная строка (администратор)\tCtrl+Alt+L", em_vim_0244
-    MENUITEM "        Командная строка\tCtrl+L", em_vim_0245
-    MENUITEM "Windows PowerShell", em_vim_0145
-    MENUITEM "        Windows PowerShell (администратор)", em_vim_1246
-    MENUITEM "        Windows PowerShell ISE (администратор)", em_vim_1251
-    MENUITEM "        Windows PowerShell", em_vim_0246
-    MENUITEM "        Windows PowerShell ISE", em_vim_0251
-    MENUITEM "Файлы реестра", em_vim_0145
-    MENUITEM "        Конвертировать *.reg - файл  в *.bat", em_vim_0150
-    MENUITEM "        Конвертировать *.reg - файл  в *.cfg", em_vim_0151
-    MENUITEM "        Конвертировать *.reg - файл  в *.inf ", em_vim_0152
-    MENUITEM "Командные файлы *.bat  и *.cmd", em_vim_0145
-    MENUITEM "        Конвертировать *.bat \*.cmd- файл  в *.exe (86)", em_vim_0153
-    MENUITEM "        Конвертировать *.bat \*.cmd- файл  в *.exe (64)", em_vim_0154
-    MENUITEM "        Конвертировать *.bat \*.cmd- файл  в *.exe (86) hide", em_vim_0155
-    MENUITEM "        Конвертировать *.bat \*.cmd- файл  в *.exe (64) hide", em_vim_0156
-    MENUITEM "Утилиты", em_vim_0145
-    MENUITEM "        RegConvert v1  *.reg- файлы в *.bat *.vbs *.au3", em_vim_0170
-    MENUITEM "        RegConvert  *.reg- файлы в *.bat *.inf", em_vim_0171
-END_POPUP
-;
-POPUP "Ви&д"
-;
-    POPUP "Рас&ширенные настройки"
-        MENUITEM "Вертикальная Панель инстр&ументов: вкл/выкл", cm_VisButtonbar2
-        MENUITEM "Панель инстр&ументов: вкл/выкл", $B55
-        MENUITEM SEPARATOR
-        MENUITEM "Кнопки диско&в: вкл/выкл", $B56
-        MENUITEM "Панели выбора дисков: &две/одна", $B57
-        MENUITEM "Окн&о выбора диска: вкл/выкл", $B5A
-        MENUITEM "Использов&ать вкладки папок: вкл/выкл", $B64
-        MENUITEM "За&головок файловой панели: вкл/выкл", $B5B
-        MENUITEM "Использовать &цепочки навигации: вкл/выкл", $B6E
-        MENUITEM "Кнопки и&стории и избранных каталогов: вкл/выкл", $B67
-        MENUITEM "&Заголовки табуляторов: вкл/выкл", $B5C
-        MENUITEM "Строка состоя&ния: вкл/выкл", $B5D
-        MENUITEM "&Командная строка: вкл/выкл", $B5E
-        MENUITEM "&Функциональные кнопки: вкл/выкл", $B5F
-        MENUITEM SEPARATOR
-        MENUITEM "Кнопки дисков: плоские/о&бычные", $B58
-        MENUITEM "Интерфейс основного окна: &плоский/обычный", $B59
-        MENUITEM "Стил&ь Windows XP/Vista/7 для фона: вкл/выкл", $B6B
-        MENUITEM SEPARATOR
-        MENUITEM "Сортировать каталоги: по им&ени/как файлы", $7DC
-        MENUITEM "Показывать длинные &имена: вкл/выкл", $7DA
-        MENUITEM "Показывать скрытые/системные фа&йлы: вкл/выкл", $7DB
-        MENUITEM "Показывать имена &8.3 в нижнем регистре: вкл/выкл", $7DD
-        MENUITEM "Показывать овер&лейные значки: вкл/выкл", $B65  
-    END_POPUP
-;    
-    MENUITEM SEPARATOR
-    MENUITEM "&Краткий\tCtrl+F1", $12D
-    MENUITEM "&Подробный\tCtrl+F2", $12E
-    MENUITEM "Коммента&рии\tCtrl+Shift+F2", $12C
-    MENUITEM "По&льзовательский набор колонок\tShift+F1", $10E
-    MENUITEM "Пол&ьзовательский стиль оформления", $14D
-    MENUITEM "Автовыбор стиля оформления", em_vim_0789
-    MENUITEM "Просмотр &эскизов\tCtrl+Shift+F1", $10D
-    MENUITEM "&Дерево каталогов\tCtrl+F8", $12F
-;    
-    POPUP "Дерево в отдел&ьной панели\tCtrl+Shift+F8"
-        MENUITEM "&0 (Нет)", $C80
-        MENUITEM "&1 (Одно для обеих панелей)", $C81
-        MENUITEM "&2 (Два, по одному на панель)", $C82
-        MENUITEM SEPARATOR
-        MENUITEM "&Переключить режим дерева", $C83
-        MENUITEM SEPARATOR
-;       MENUITEM "&Одно дерево: вкл/выкл", $C84
-;       MENUITEM "&Два дерева: вкл/выкл", $C85
-    END_POPUP
-;    
-    MENUITEM SEPARATOR
-    MENUITEM "Показать размеры все&х папок\tAlt+Shift+Enter", $7DE
-    MENUITEM "Обновить содер&жимое панели\tCtrl+R", $21C
-    MENUITEM SEPARATOR
-    MENUITEM "Получатель &= Источнику", $214
-    MENUITEM SEPARATOR
-    MENUITEM "Вс&е файлы\tCtrl+F10", $138
-    MENUITEM "Програ&ммы\tCtrl+F11", $137
-    MENUITEM "*.*", $139
-    MENUITEM "&Фильтр...\tCtrl+F12", $13A
-    MENUITEM "Показать только выделенные об&ъекты", $7E7
-    MENUITEM SEPARATOR
-    MENUITEM "По &имени\tCtrl+F3", $141
-    MENUITEM "По &типу\tCtrl+F4", $142
-    MENUITEM "По дате/&времени\tCtrl+F5", $144
-    MENUITEM "По ра&змеру\tCtrl+F6", $143
-    MENUITEM "Без &сортировки\tCtrl+F7", $145
-    MENUITEM SEPARATOR
-    MENUITEM "В обратном пор&ядке", $14A
-    MENUITEM SEPARATOR
-    MENUITEM "Раскрасить/снять раскраску выд. объектам\tCtrl+INS", em_vim_0736
-    MENUITEM "Выд. папкам значок выбранный в диалоге", em_vim_0737
-    MENUITEM "Выд. папке значок (из ico или exe внутри п-ки)", em_vim_0738
-    MENUITEM "Выд. папке значок (из exe или ico внутри п-ки)", em_vim_0739
-    MENUITEM "Отменить назначение значков выд. папкам", em_vim_0740
-END_POPUP
 ;  
 POPUP "&Выделить"
-    MENUITEM "Вы&делить всё\tCtrl+Num +", $20B
-    MENUITEM "Выделить только &файлы", $CE6
-    MENUITEM "Выделить только &папки", $CE7
-    MENUITEM "Сн&ять всё выделение\tCtrl+Num –", $20C
-;   MENUITEM "&Инвертировать выделение\tNum *", $20D
-    MENUITEM "Выделить файлы/папки по &расширению\tAlt+Num +", $20F
+    MENUITEM "Вы&делить всё\tCtrl+Num +", cm_SelectAll
+    MENUITEM "Выделить только &файлы", cm_SelectAllFiles
+    MENUITEM "Выделить только &папки", cm_SelectAllFolders
+    MENUITEM "Сн&ять всё выделение\tCtrl+Num –", cm_ClearAll
+;   MENUITEM "&Инвертировать выделение\tNum *", cm_ExchangeSelection
+    MENUITEM "Выделить файлы/папки по &расширению\tAlt+Num +", cm_SelectCurrentExtension
     MENUITEM SEPARATOR
     MENUITEM "Снять Всё выделение в обеих Панелях", em_vim_0528
     MENUITEM SEPARATOR
     MENUITEM "Выделить "зеброй" все объекты", em_vim_0001
-    MENUITEM "&Инвертировать выделение\tNum *", $20D
+    MENUITEM "&Инвертировать выделение\tNum *", cm_ExchangeSelection
     MENUITEM SEPARATOR
     MENUITEM "Выделить объекты по списку из буфера обмена", em_vim_0002
     MENUITEM "Выделить одинаковые объекты в обеих панелях", em_vim_0388
@@ -370,22 +340,23 @@ POPUP "&Выделить"
     MENUITEM "Выделить элементы, где в именах есть русские буквы", em_vim_0358
     MENUITEM "Заменить Русские буквы на Латинские + пробелы на _", em_vim_0277
     MENUITEM SEPARATOR
-    MENUITEM "Показать все файлы без подкаталогов", $7EA
-    MENUITEM "Показать без подкаталогов  файлы в выделенном", $7FE
+    MENUITEM "Показать все файлы без подкаталогов", cm_DirBranch
+    MENUITEM "Показать без подкаталогов  файлы в выделенном", cm_DirBranchSel
     MENUITEM "Выделить всё с этим путём (режим без подкаталогов)", cm_SelectCurrentPath
     MENUITEM "Снять выделение с этим путём (реж.без подкаталогов)", em_vim_0791
     MENUITEM SEPARATOR
-    MENUITEM "Показать только выделенные об&ъекты", $7E7
+    MENUITEM "Показать только выделенные об&ъекты", cm_ShowOnlySelected
     MENUITEM "Показать в ДП объекты выд.ярлыков (во вкладках)", em_vim_0252
     MENUITEM "Показать выделенное в ДП в отдельной вкладке", em_vim_0614
     MENUITEM SEPARATOR
-    MENUITEM "Выде&лить группу...\tNum +", $209
-    MENUITEM "Снять выделение &группы...\tNum –", $20A
-    MENUITEM "Поменять местами панели (в&се вкладки)\tCtrl+Shift+U", $217
+    MENUITEM "Выде&лить группу...\tNum +", cm_SpreadSelection
+    MENUITEM "Снять выделение &группы...\tNum –", cm_ShrinkSelection
+    MENUITEM "Поменять местами панели (в&се вкладки)\tCtrl+Shift+U", cm_ExchangeWithTabs
     MENUITEM SEPARATOR
-    MENUITEM "С&охранить выделение", $212
-    MENUITEM "Восс&тановить выделение\tNum /", $211
-    MENUITEM "Со&хранить выделение в файл...", $7EF
+    MENUITEM "С&охранить выделение", cm_SaveSelection
+    MENUITEM "Восс&тановить выделение\tNum /", cm_RestoreSelection
+    MENUITEM "Со&хранить выделение в файл...", cm_SaveSelectionToFile
+    MENUITEM "Загрузить выделение из &файла...", cm_LoadSelectionFromFile
 END_POPUP
 ;   
 POPUP "Буфер"
@@ -395,8 +366,8 @@ POPUP "Буфер"
     MENUITEM SEPARATOR
     MENUITEM "Вкл/Откл загрузку с TC наблюдение за «Буфером Обмена»", em_vim_0597
     MENUITEM SEPARATOR
-    MENUITEM "Копировать имена &объектов в «Буфер обмена»", $7E1
-    MENUITEM "Копировать по&лные имена в «Буфер обмена»", $7E2
+    MENUITEM "Копировать имена &объектов в «Буфер обмена»", cm_CopyNamesToClip
+    MENUITEM "Копировать по&лные имена в «Буфер обмена»", cm_CopyFullNamesToClip
     MENUITEM "Копировать чистые имена в «Буфер обмена»", em_vim_0005
     MENUITEM "Копия переменных %путей% в «Буфер обмена»", em_vim_0006
     MENUITEM "Копия переменных %%путей%% в «Буфер обмена»", em_vim_0165
@@ -509,9 +480,9 @@ POPUP "Буфер"
     MENUITEM SEPARATOR
 ;
     POPUP "Копия в буфер "Колонки, Расширения, Имена, Шаблоны""
-        MENUITEM "Копировать со&держимое всех колонок в буфер", $7F4
-        MENUITEM "Копировать все колонки (полн&ые пути) в буфер", $7F5
-        MENUITEM "Копировать все коло&нки (UNC-пути) в буфер", $7F6
+        MENUITEM "Копировать со&держимое всех колонок в буфер", cm_CopyFileDetailsToClip
+        MENUITEM "Копировать все колонки (полн&ые пути) в буфер", cm_CopyFpFileDetailsToClip
+        MENUITEM "Копировать все коло&нки (UNC-пути) в буфер", cm_CopyNetFileDetailsToClip
         MENUITEM SEPARATOR
         MENUITEM "Сохранить содержимое всех колонок в файл (Юникод)", em_vim_0795
         MENUITEM "Сохранить содержимое всех колонок в файл (ANSI)", em_vim_0796
@@ -549,124 +520,38 @@ POPUP "Буфер"
     MENUITEM SEPARATOR
     MENUITEM "Содержимое текстового файла под курсором в «Буфер»", em_vim_0512       
 END_POPUP
+;MENUITEM SEPARATOR
 ;
-POPUP "Ви&д"
-;
-    POPUP "Рас&ширенные настройки"
-        MENUITEM "Вертикальная Панель инстр&ументов: вкл/выкл", cm_VisButtonbar2
-        MENUITEM "Панель инстр&ументов: вкл/выкл", $B55
-        MENUITEM SEPARATOR
-        MENUITEM "Кнопки диско&в: вкл/выкл", $B56
-        MENUITEM "Панели выбора дисков: &две/одна", $B57
-        MENUITEM "Окн&о выбора диска: вкл/выкл", $B5A
-        MENUITEM "Использов&ать вкладки папок: вкл/выкл", $B64
-        MENUITEM "За&головок файловой панели: вкл/выкл", $B5B
-        MENUITEM "Использовать &цепочки навигации: вкл/выкл", $B6E
-        MENUITEM "Кнопки и&стории и избранных каталогов: вкл/выкл", $B67
-        MENUITEM "&Заголовки табуляторов: вкл/выкл", $B5C
-        MENUITEM "Строка состоя&ния: вкл/выкл", $B5D
-        MENUITEM "&Командная строка: вкл/выкл", $B5E
-        MENUITEM "&Функциональные кнопки: вкл/выкл", $B5F
-        MENUITEM SEPARATOR
-        MENUITEM "Кнопки дисков: плоские/о&бычные", $B58
-        MENUITEM "Интерфейс основного окна: &плоский/обычный", $B59
-        MENUITEM "Стил&ь Windows XP/Vista/7 для фона: вкл/выкл", $B6B
-        MENUITEM SEPARATOR
-        MENUITEM "Сортировать каталоги: по им&ени/как файлы", $7DC
-        MENUITEM "Показывать длинные &имена: вкл/выкл", $7DA
-        MENUITEM "Показывать скрытые/системные фа&йлы: вкл/выкл", $7DB
-        MENUITEM "Показывать имена &8.3 в нижнем регистре: вкл/выкл", $7DD
-        MENUITEM "Показывать овер&лейные значки: вкл/выкл", $B65 
-    END_POPUP
-;    
-    MENUITEM SEPARATOR
-    MENUITEM "&Краткий\tCtrl+F1", $12D
-    MENUITEM "&Подробный\tCtrl+F2", $12E
-    MENUITEM "Коммента&рии\tCtrl+Shift+F2", $12C
-    MENUITEM "По&льзовательский набор колонок\tShift+F1", $10E
-    MENUITEM "Пол&ьзовательский стиль оформления", $14D
-    MENUITEM "Автовыбор стиля оформления", em_vim_0789
-    MENUITEM "Просмотр &эскизов\tCtrl+Shift+F1", $10D
-    MENUITEM "&Дерево каталогов\tCtrl+F8", $12F
-;    
-    POPUP "Дерево в отдел&ьной панели\tCtrl+Shift+F8"
-        MENUITEM "&0 (Нет)", $C80
-        MENUITEM "&1 (Одно для обеих панелей)", $C81
-        MENUITEM "&2 (Два, по одному на панель)", $C82
-        MENUITEM SEPARATOR
-        MENUITEM "&Переключить режим дерева", $C83
-;       MENUITEM "&Одно дерево: вкл/выкл", $C84
-;       MENUITEM "&Два дерева: вкл/выкл", $C85
-    END_POPUP
-;    
-    MENUITEM SEPARATOR
-    MENUITEM "Показать размеры все&х папок\tAlt+Shift+Enter", $7DE
-    MENUITEM "Обновить содер&жимое панели\tCtrl+R", $21C
-    MENUITEM SEPARATOR
-    MENUITEM "Получатель &= Источнику", $214
-    MENUITEM SEPARATOR
-    MENUITEM "Вс&е файлы\tCtrl+F10", $138
-    MENUITEM "Програ&ммы\tCtrl+F11", $137
-    MENUITEM "*.*", $139
-    MENUITEM "&Фильтр...\tCtrl+F12", $13A
-    MENUITEM "Показать только выделенные об&ъекты", $7E7
-    MENUITEM SEPARATOR
-    MENUITEM "По &имени\tCtrl+F3", $141
-    MENUITEM "По &типу\tCtrl+F4", $142
-    MENUITEM "По дате/&времени\tCtrl+F5", $144
-    MENUITEM "По ра&змеру\tCtrl+F6", $143
-    MENUITEM "Без &сортировки\tCtrl+F7", $145
-    MENUITEM SEPARATOR
-    MENUITEM "В обратном пор&ядке", $14A
-    MENUITEM SEPARATOR
-    MENUITEM "Раскрасить/снять раскраску выд. объектам\tCtrl+INS", em_vim_0736
-    MENUITEM "Выд. папкам значок выбранный в диалоге", em_vim_0737
-    MENUITEM "Выд. папке значок (из ico или exe внутри п-ки)", em_vim_0738
-    MENUITEM "Выд. папке значок (из exe или ico внутри п-ки)", em_vim_0739
-    MENUITEM "Отменить назначение значков выд. папкам", em_vim_0740
+POPUP "……  Выполнить  ……" 
+    MENUITEM "Исполняемые файлы", em_vim_0145
+    MENUITEM "        Запустить выд. с параметрами", em_vim_0146
+    MENUITEM "        Запустить выд. с параметрами (администратор)", em_vim_0147
+    MENUITEM "Меню "Выполнить" и Командная строка", em_vim_0145
+;   MENUITEM "   Запустить Babun (администратор)", em_vim_2001
+;   MENUITEM "   Запустить Babun", em_vim_2002
+    MENUITEM "        Меню "Выполнить" (администратор) ", em_vim_0242
+    MENUITEM "        Меню "Выполнить"", em_vim_1242
+    MENUITEM "        Командная строка (администратор)\tCtrl+Alt+L", em_vim_0244
+    MENUITEM "        Командная строка\tCtrl+L", em_vim_0245
+    MENUITEM "Windows PowerShell", em_vim_0145
+    MENUITEM "        Windows PowerShell (администратор)", em_vim_1246
+    MENUITEM "        Windows PowerShell ISE (администратор)", em_vim_1251
+    MENUITEM "        Windows PowerShell", em_vim_0246
+    MENUITEM "        Windows PowerShell ISE", em_vim_0251
+    MENUITEM "Файлы реестра", em_vim_0145
+    MENUITEM "        Конвертировать *.reg - файл  в *.bat", em_vim_0150
+    MENUITEM "        Конвертировать *.reg - файл  в *.cfg", em_vim_0151
+    MENUITEM "        Конвертировать *.reg - файл  в *.inf ", em_vim_0152
+    MENUITEM "Командные файлы *.bat  и *.cmd", em_vim_0145
+    MENUITEM "        Конвертировать *.bat \*.cmd- файл  в *.exe (86)", em_vim_0153
+    MENUITEM "        Конвертировать *.bat \*.cmd- файл  в *.exe (64)", em_vim_0154
+    MENUITEM "        Конвертировать *.bat \*.cmd- файл  в *.exe (86) hide", em_vim_0155
+    MENUITEM "        Конвертировать *.bat \*.cmd- файл  в *.exe (64) hide", em_vim_0156
+    MENUITEM "Утилиты", em_vim_0145
+    MENUITEM "        RegConvert v1  *.reg- файлы в *.bat *.vbs *.au3", em_vim_0170
+    MENUITEM "        RegConvert  *.reg- файлы в *.bat *.inf", em_vim_0171
 END_POPUP
-;  
-POPUP "&Выделить"
-    MENUITEM "Вы&делить всё\tCtrl+Num +", $20B
-    MENUITEM "Выделить только &файлы", $CE6
-    MENUITEM "Выделить только &папки", $CE7
-    MENUITEM "Сн&ять всё выделение\tCtrl+Num –", $20C
-;   MENUITEM "&Инвертировать выделение\tNum *", $20D
-    MENUITEM "Выделить файлы/папки по &расширению\tAlt+Num +", $20F
-    MENUITEM SEPARATOR
-    MENUITEM "Снять Всё выделение в обеих Панелях", em_vim_0528
-    MENUITEM SEPARATOR
-    MENUITEM "Выделить "зеброй" все объекты", em_vim_0001
-    MENUITEM "&Инвертировать выделение\tNum *", $20D
-    MENUITEM SEPARATOR
-    MENUITEM "Выделить объекты по списку из буфера обмена", em_vim_0002
-    MENUITEM "Выделить одинаковые объекты в обеих панелях", em_vim_0388
-    MENUITEM "Выделить подобные объекты в другой панели", em_vim_0003
-;   MENUITEM "Выд.по первым 4-м символам объекта под курсором", em_vim_0729
-    MENUITEM "Выд.по первым символам о/под курс.(к-во в диалоге)", em_vim_0728
-    MENUITEM "Выделить папки со значком как у папки под курсором", em_vim_0679
-    MENUITEM SEPARATOR
-    MENUITEM "Выделить элементы, где в именах есть русские буквы", em_vim_0358
-    MENUITEM "Заменить Русские буквы на Латинские + пробелы на _", em_vim_0277
-    MENUITEM SEPARATOR
-    MENUITEM "Показать все файлы без подкаталогов", $7EA
-    MENUITEM "Показать без подкаталогов  файлы в выделенном", $7FE
-    MENUITEM "Выделить всё с этим путём (режим без подкаталогов)", cm_SelectCurrentPath
-    MENUITEM "Снять выделение с этим путём (реж.без подкаталогов)", em_vim_0791
-    MENUITEM SEPARATOR
-    MENUITEM "Показать только выделенные об&ъекты", $7E7
-    MENUITEM "Показать в ДП объекты выд.ярлыков (во вкладках)", em_vim_0252
-    MENUITEM "Показать выделенное в ДП в отдельной вкладке", em_vim_0614
-    MENUITEM SEPARATOR
-    MENUITEM "Выде&лить группу...\tNum +", $209
-    MENUITEM "Снять выделение &группы...\tNum –", $20A
-    MENUITEM "Поменять местами панели (в&се вкладки)\tCtrl+Shift+U", $217
-    MENUITEM SEPARATOR
-    MENUITEM "С&охранить выделение", $212
-    MENUITEM "Восс&тановить выделение\tNum /", $211
-    MENUITEM "Со&хранить выделение в файл...", $7EF
-    MENUITEM "Загрузить выделение из &файла...", $7F0
-END_POPUP
+;MENUITEM SEPARATOR
 ;
 POPUP "Специальные"
     MENUITEM "Создать тест-кнопку для TCIMG (параметры из буфера)", em_vim_0250
@@ -732,8 +617,8 @@ POPUP "Оптимизация"
     MENUITEM SEPARATOR
     MENUITEM "Очистить память с Mem Reduct (см. в трее)", em_vim_0176
     MENUITEM SEPARATOR
-    MENUITEM "Отдельная оптимизация Windows 7/8.1", em_vim_0453
-    MENUITEM SEPARATOR
+;    MENUITEM "Отдельная оптимизация Windows 7/8.1", em_vim_0453
+;    MENUITEM SEPARATOR
 ; 
     POPUP "Отдельная оптимизация Windows 7 – 8.1"
         MENUITEM SEPARATOR
@@ -949,11 +834,11 @@ HELP_BREAK
 POPUP "±" 
     MENUITEM "Убрать панельки", em_vim_0061
     MENUITEM "Активное окно", em_vim_0062
-    MENUITEM "Скрыть неактивну&ю панель", $38E
-    MENUITEM "&Установить размеры панелей одинаковыми", $38D
+    MENUITEM "Скрыть неактивну&ю панель", cm_100Percent
+    MENUITEM "&Установить размеры панелей одинаковыми", cm_50Percent
     MENUITEM "Панели одна над другой", cm_VerticalPanels
     MENUITEM "Выбор [режима дерева]", cm_SwitchSeparateTree
-    MENUITEM "Поменять местами панели", $217
+    MENUITEM "Поменять местами панели", cm_ExchangeWithTabs
     MENUITEM SEPARATOR
     MENUITEM "Установить размеры эскизов 100 x 80", em_vim_0760
     MENUITEM "Установить размеры эскизов 120 x 90", em_vim_0761
@@ -1058,11 +943,11 @@ POPUP "&Папки"
     MENUITEM SEPARATOR
     MENUITEM "Папка всех задач", em_vim_0119
     MENUITEM SEPARATOR
-    MENUITEM "Синхронизировать Каталоги", $7E4
+    MENUITEM "Синхронизировать Каталоги", cm_FileSync
     MENUITEM SEPARATOR
-    MENUITEM "Сравнить &каталоги             Shift+F2", $215
-    MENUITEM "Срав&нить,с учётом подкаталогов", $218
-    MENUITEM "Срав&нить,скрыв одинаков. файлы", $216
+    MENUITEM "Сравнить &каталоги             Shift+F2", cm_CompareDirs
+    MENUITEM "Срав&нить,с учётом подкаталогов", cm_CompareDirsWithSubdirs
+    MENUITEM "Срав&нить,скрыв одинаков. файлы", cm_DirMatch
 END_POPUP
 ;       
 POPUP "Загрузка" 
@@ -1132,7 +1017,7 @@ END_POPUP
 POPUP "Система" 
     MENUITEM "Версия Windows ", em_vim_0501
     MENUITEM "Сведения о системе ", em_vim_0408
-    MENUITEM "&Информация о системе", $1FA
+    MENUITEM "&Информация о системе", cm_SysInfo
     MENUITEM "Свойства системы", em_vim_0394
     MENUITEM "Конфигурация системы", em_vim_0406
     MENUITEM SEPARATOR
@@ -1202,13 +1087,12 @@ POPUP "&Компьютер +"
 END_POPUP
 ;
 POPUP "Сп&равка"
-    MENUITEM "&Содержание\tF1", $262
-    MENUITEM "&Содержание\tF1", em_vim_0798
-    MENUITEM "&Горячие клавиши", $26C
-    MENUITEM "О &регистрации", $276
-    MENUITEM "&Посетить сайт программы", $280       
+    MENUITEM "&Содержание\tF1", cm_HelpIndex
+    MENUITEM "&Горячие клавиши", cm_Keyboard
+    MENUITEM "О &регистрации", cm_Register
+    MENUITEM "&Посетить сайт программы", cm_VisitHomepage      
     MENUITEM SEPARATOR
-    MENUITEM "&О Total Commander...", $2B2  
+    MENUITEM "&О Total Commander...", cm_About  
 ;    
     POPUP "TC VIM"      
         MENUITEM "Автор сборки Matros ® ,версия 19, 2017 год", em_vim_0133
@@ -1235,4 +1119,3 @@ END_POPUP
 ;
 MENUITEM "xт", em_vim_0624
 ;   MENUITEM "x", em_vim_0467
-
