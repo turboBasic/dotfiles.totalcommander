@@ -1089,6 +1089,7 @@ END_POPUP
 POPUP "Сп&равка"
     MENUITEM "&Содержание\tF1", cm_HelpIndex
     MENUITEM "&Горячие клавиши", cm_Keyboard
+    MENUITEM "Все команды Total Commander", em_vim_2004
     MENUITEM "О &регистрации", cm_Register
     MENUITEM "&Посетить сайт программы", cm_VisitHomepage      
     MENUITEM SEPARATOR
