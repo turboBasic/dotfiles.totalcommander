@@ -520,9 +520,9 @@ POPUP "Буфер"
     MENUITEM SEPARATOR
     MENUITEM "Содержимое текстового файла под курсором в «Буфер»", em_vim_0512       
 END_POPUP
-;MENUITEM SEPARATOR
+;MENUITEM SEPARATOR Выполнить…><
 ;
-POPUP "……  Выполнить  ……" 
+POPUP "  ¦ RUN ¦" 
     MENUITEM "Исполняемые файлы", em_vim_0145
     MENUITEM "        Запустить выд. с параметрами", em_vim_0146
     MENUITEM "        Запустить выд. с параметрами (администратор)", em_vim_0147
@@ -533,11 +533,11 @@ POPUP "……  Выполнить  ……"
     MENUITEM "        Меню "Выполнить"", em_vim_1242
     MENUITEM "        Командная строка (администратор)\tCtrl+Alt+L", em_vim_0244
     MENUITEM "        Командная строка\tCtrl+L", em_vim_0245
-    MENUITEM "Windows PowerShell", em_vim_0145
-    MENUITEM "        Windows PowerShell (администратор)", em_vim_1246
-    MENUITEM "        Windows PowerShell ISE (администратор)", em_vim_1251
-    MENUITEM "        Windows PowerShell", em_vim_0246
-    MENUITEM "        Windows PowerShell ISE", em_vim_0251
+    MENUITEM "PowerShell", em_vim_0145
+    MENUITEM "        PowerShell (администратор)", em_vim_1246
+    MENUITEM "        PowerShell ISE (администратор)", em_vim_1251
+    MENUITEM "        PowerShell", em_vim_0246
+    MENUITEM "        PowerShell ISE", em_vim_0251
     MENUITEM "Файлы реестра", em_vim_0145
     MENUITEM "        Конвертировать *.reg - файл  в *.bat", em_vim_0150
     MENUITEM "        Конвертировать *.reg - файл  в *.cfg", em_vim_0151
