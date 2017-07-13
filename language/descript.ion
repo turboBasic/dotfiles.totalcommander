@@ -10,8 +10,8 @@ wcmd_win10amd64_2_dan.ini Udvidet Dansk Menu II for TC 9.0 64bit under Windows 1
 wcmd_win10amd64_dan.zip Udvidet Dansk Menu I & II for TC 9.0 64bit under Windows 10 64bit (af petermad) - Udvidelser
 wcmd_win10amd64_dan.txt Udvidet Dansk Menu I & II for TC 9.0 64bit under Windows 10 64bit (af petermad) - Læsmig-fil
 wcmd_win10amd64_eng Extended English Menu I & II for TC 9.0 64bit under Windows 10 64bit (by petermad) - Buttton bars
-wcmd_win10amd64_1_eng.lng Extended English Menu I  for TC 9.0 64bit under Windows 10 64bit (by petermad) - Language file
-wcmd_win10amd64_1_eng.mnu Extended English Menu I  for TC 9.0 64bit under Windows 10 64bit (by petermad) - Menu file
+wcmd_win10amd64_1_eng.lng ;Should be ANSI! Extended English Menu I  for TC 9.0 64bit under Windows 10 64bit (by petermad) - Language file 
+wcmd_win10amd64_1_eng.mnu ;Should be ANSI! Extended English Menu I  for TC 9.0 64bit under Windows 10 64bit (by petermad) - Menu file
 wcmd_win10amd64_1_eng.inc Extended English Menu I  for TC 9.0 64bit under Windows 10 64bit (by petermad) - Command descriptions
 wcmd_win10amd64_1_eng.ini Extended English Menu I  for TC 9.0 64bit under Windows 10 64bit (by petermad) - User commands
 wcmd_win10amd64_2_eng.lng Extended English Menu II for TC 9.0 64bit under Windows 10 64bit (by petermad) - Language file
@@ -20,7 +20,6 @@ wcmd_win10amd64_2_eng.inc Extended English Menu II for TC 9.0 64bit under Window
 wcmd_win10amd64_2_eng.ini Extended English Menu II for TC 9.0 64bit under Windows 10 64bit (by petermad) - User commands
 wcmd_win10amd64_eng.zip Extended English Menu I & II for TC 9.0 64bit under Windows 10 64bit (by petermad) - Addons  
 wcmd_win10amd64_eng.txt Extended English Menu I & II for TC 9.0 64bit under Windows 10 64bit (by petermad) - Readme file
-
 wcmd_win10%PROCESSOR_ARCHITECTURE%_1_dan.lng Udvidet Dansk Menu I  for TC 9.0 32/64bit under Windows 10 64bit (af petermad) - Sprogfil
 wcmd_win10%PROCESSOR_ARCHITECTURE%_2_dan.lng Udvidet Dansk Menu II for TC 9.0 32/64bit under Windows 10 64bit (af petermad) - Sprogfil
 wcmd_win10%PROCESSOR_ARCHITECTURE%_1_eng.lng Extended English Menu I  for TC 9.0 32/64bit under Windows 10 64bit (by petermad) - Language file
@@ -260,11 +259,6 @@ wcmd_winxp_2_eng.inc Extended English Menu II For TC 9.0 32bit under Windows XP 
 wcmd_winxp_2_eng.ini Extended English Menu II For TC 9.0 32bit under Windows XP 32Bit (by petermad) - User commands
 wcmd_winxp_eng.zip Extended English Menu I & II For TC 9.0 32bit under Windows XP 32Bit (by petermad) - Addons  
 wcmd_winxp_eng.txt Extended English Menu I & II For TC 9.0 32bit under Windows XP 32Bit (by petermad) - Readme file
-
-wcmd_eng.lng External English language File
-wcmd_eng.mnu External English menu File
-wcmd_eng.inc External English command descriptions
-
 wcmd_ext1_dan.lng Udvidet Dansk Menu I  For TC 7.57 under Windows XP 32bit (af petermad) - Sprogfil
 wcmd_ext1_dan.mnu Udvidet Dansk Menu I  For TC 7.57 under Windows XP 32bit (af petermad) - Menufil
 wcmd_ext1_dan.inc Udvidet Dansk Menu I  For TC 7.57 under Windows XP 32bit (af petermad) - Kommandobeskrivelser

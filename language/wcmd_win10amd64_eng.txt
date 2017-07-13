@@ -51,6 +51,7 @@ wcmd_win10amd64_eng.zip is a self installing archive containing several Addons
 for Total Commander:
 
 1: Extended Icon Set for TC (with 48x48 icons) (wcmicon_win10amd64.dll, wcmicon_win10amd64.inc).
+   Use wcmicon_win10%PROCESSOR_ARCHITECTURE%.dll for combined 32/64bit installation.
 2: Old Style Help for TC (totalcmd.hlp, winhlp32.exe).
 3: English Standalone Lister (lister.exe, lister.exe.manifest).
 4: Extended File Comments for TC (descript.ion).

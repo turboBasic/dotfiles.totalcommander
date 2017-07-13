@@ -1,5 +1,5 @@
- English with Extended Menu I  for TC 9.0 64bit under Windows 10 64bit
-codepage=1252
+ English Extended; tc9.0x64; w10x64; !ANSI!
+codepage=1251
 0="Access denied on file\n%s !"
 1="Enter file types (e.g. *.doc;*.txt)"
 2="New folder (directory)"
@@ -2022,6 +2022,7 @@ codepage=1252
 7811="Auto-&run commands:"
 7812="&Priority"
 
+{Error Strings}
 30000="Go to position (in %)"
 30001="Disk read error!"
 30002="File not found!"

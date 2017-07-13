@@ -36,3 +36,6 @@ fabric.properties
 /.idea/deployment.xml
 
 *.bak
+LANGUAGE/__delete_me_sometime_wcmd_win10_x86_2.7z
+LANGUAGE/tc900_win10x86_amd64_eng.zip
+LANGUAGE/tc900_win10x86_amd64_eng/
