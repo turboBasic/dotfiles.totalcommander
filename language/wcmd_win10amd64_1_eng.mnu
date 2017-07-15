@@ -2,6 +2,51 @@
 MENUITEM "»»", em_vim_0564
 
 POPUP "&Files"
+    POPUP "&Файлы"
+        MENUITEM "Запустить объект под курсором с параметрами", em_vim_0146
+        MENUITEM "Запустить об/под курс. с параметрами (админ.)", em_vim_0147
+        MENUITEM SEPARATOR
+        MENUITEM "&Запуск файла под курсором\tEnter", cm_Return
+        MENUITEM "Запуск прогр&аммы от имени...", cm_OpenAsUser
+        MENUITEM "Открыть с помо&щью...", cm_Associate
+        MENUITEM "Внутренние ассо&циации (только в TC)...", cm_InternalAssociate
+        MENUITEM "&Метка диска...", cm_VolumeId
+        MENUITEM SEPARATOR
+        MENUITEM "Объект под курсором в автозагрузку с Windows", em_vim_0733
+        MENUITEM SEPARATOR
+        MENUITEM "Выделенным объектам назначить дату и время", em_vim_0800
+        MENUITEM "&Изменить Атрибуты...", cm_SetAttrib
+        MENUITEM "Изменить Атрибуты файлам  по типу (рекурсия)", em_vim_0566
+        MENUITEM "Показать диалог сво&йств\tAlt + Enter", cm_VersionInfo
+        MENUITEM "Информация о программе под курсором", em_vim_0459
+        MENUITEM "&Комментарий к файлу...\tCtrl+Z", cm_EditComment
+        MENUITEM "Подсчитать занимаемое &место", cm_GetFileSpace
+        MENUITEM SEPARATOR
+        MENUITEM "Синхронизовать Каталоги", cm_FileSync
+        MENUITEM SEPARATOR
+        MENUITEM "Сравнить по содер&жимому...", cm_CompareFilesByContent
+        MENUITEM "Сравнить внутр&енним инструментом...", cm_IntCompareFilesByContent
+        POPUP "Пе&чать"
+            MENUITEM "&Список файлов...", cm_PrintDir
+            MENUITEM "Список файлов с &подкаталогами...", cm_PrintDirSub
+            MENUITEM "&Файл (содержимое)\tCtrl+F9", cm_PrintFile
+        END_POPUP
+        MENUITEM SEPARATOR
+        MENUITEM "Быстрый просмотр в отдельном окне", em_vim_0793
+        MENUITEM "Просмотр с отк&лючёнными плагинами\tAlt+Shift+F3", cm_ListInternalOnly
+        MENUITEM SEPARATOR
+        MENUITEM "&Упаковать...\tAlt+F5", cm_PackFiles
+        MENUITEM "&Распаковать...\tAlt+F9", cm_UnpackFiles
+        MENUITEM "Протестировать ар&хив(ы)\tAlt+Shift+F9", cm_TestArchive
+        MENUITEM "Создать &ярлык...\tCtrl+Shift+F5", cm_CreateShortcut
+        MENUITEM SEPARATOR
+        MENUITEM "Разби&ть файл...", cm_Split
+        MENUITEM "Со&брать файлы...", cm_Combine
+        MENUITEM "Кодироват&ь (MIME, UUE, XXE)...", cm_Encode
+        MENUITEM "&Декодировать (MIME, UUE, XXE, BinHex)...", cm_Decode
+        MENUITEM "По&считать CRC-суммы (CRC32, MD5, SHA1)...", cm_CRCcreate
+        MENUITEM "Про&верить CRC-суммы (CRC32, MD5, SHA1)", cm_CRCcheck
+    END_POPUP
     MENUITEM "&Change Attributes...", cm_SetAttrib
     MENUITEM "Show Propert&ies...\tAlt+Enter", cm_VersionInfo
     MENUITEM "Associate (Windows O&verall)...", cm_Associate
@@ -272,11 +317,38 @@ POPUP "&View"
     MENUITEM "T&humbnail View\tShift+Ctrl+F1", cm_SrcThumbs
     MENUITEM "F&ile Comments\tShift+Ctrl+F2", cm_SrcComments
     MENUITEM SEPARATOR
+    POPUP "Рас&ширенные настройки"
+        MENUITEM "Вертикальная Панель инстр&ументов: вкл/выкл", cm_VisButtonbar2
+        MENUITEM "Панель инстр&ументов: вкл/выкл", cm_VisButtonbar
+        MENUITEM SEPARATOR
+        MENUITEM "Кнопки диско&в: вкл/выкл", cm_VisDriveButtons
+        MENUITEM "Панели выбора дисков: &две/одна", cm_VisTwoDriveButtons
+        MENUITEM "Окн&о выбора диска: вкл/выкл", cm_VisDriveCombo
+        MENUITEM "Использов&ать вкладки папок: вкл/выкл", cm_VisDirTabs
+        MENUITEM "За&головок файловой панели: вкл/выкл", cm_VisCurDir
+        MENUITEM "Использовать &цепочки навигации: вкл/выкл", cm_VisBreadCrumbs
+        MENUITEM "Кнопки и&стории и избранных каталогов: вкл/выкл", cm_VisHistHotButtons
+        MENUITEM "&Заголовки табуляторов: вкл/выкл", cm_VisTabHeader
+        MENUITEM "Строка состоя&ния: вкл/выкл", cm_VisStatusbar
+        MENUITEM "&Командная строка: вкл/выкл", cm_VisCmdLine
+        MENUITEM "&Функциональные кнопки: вкл/выкл", cm_VisKeyButtons
+        MENUITEM SEPARATOR
+        MENUITEM "Кнопки дисков: плоские/о&бычные", cm_VisFlatDriveButtons
+        MENUITEM "Интерфейс основного окна: &плоский/обычный", cm_VisFlatInterface
+        MENUITEM "Стил&ь Windows XP/Vista/7 для фона: вкл/выкл", cm_VisXPThemeBackground
+        MENUITEM SEPARATOR
+        MENUITEM "Сортировать каталоги: по им&ени/как файлы", cm_SwitchDirSort
+        MENUITEM "Показывать длинные &имена: вкл/выкл", cm_SwitchLongNames
+        MENUITEM "Показывать скрытые/системные фа&йлы: вкл/выкл", cm_SwitchHidSys
+        MENUITEM "Показывать имена &8.3 в нижнем регистре: вкл/выкл", cm_Switch83Names
+        MENUITEM "Показывать овер&лейные значки: вкл/выкл", cm_SwitchOverlayIcons
+    END_POPUP
     MENUITEM "Cust&om Columns\tShift+F1", cm_SrcCustomViewMenu
     MENUITEM "    Previous", cm_SrcPrevCustomView
     MENUITEM "    Next", cm_SrcNextCustomView
     MENUITEM "Custom View Modes", cm_SrcViewModeList
     MENUITEM "    Auto Switch Mode", cm_ToggleAutoViewModeSwitch
+    MENUITEM "    Автовыбор стиля оформления", cm_ConfigViewModeSwitch 
     MENUITEM SEPARATOR
     MENUITEM "&Tree View\tCtrl+F8", cm_SrcTree
     POPUP "S&eparate Tree View"
@@ -290,6 +362,11 @@ POPUP "&View"
     END_POPUP
     MENUITEM "    Next\tShift+Ctrl+F8", cm_SwitchSeparateTree
     MENUITEM SEPARATOR
+    MENUITEM "Показать размеры все&х папок\tAlt+Shift+Enter", cm_CountDirContent
+    MENUITEM "Обновить содер&жимое панели\tCtrl+R", cm_RereadSource
+    MENUITEM SEPARATOR
+    MENUITEM "Получатель &= Источнику", cm_MatchSrc
+    MENUITEM SEPARATOR
     MENUITEM "&Quick View\tCtrl+Q", cm_SrcQuickview
     MENUITEM "Quick View (Without Plu&gins)", cm_SrcQuickInternalOnly
     MENUITEM "Quick View in Separate Window\tShift+Ctrl+Q", cm_SeparateQuickView
@@ -299,6 +376,11 @@ POPUP "&View"
     MENUITEM "Branch View (Only Selected)\tShift+Ctrl+B", cm_DirBranchSel
     MENUITEM SEPARATOR
     MENUITEM "&Vertical Alignment", cm_VerticalPanels
+    MENUITEM "Раскрасить/снять раскраску выд. объектам\tCtrl+INS", em_vim_0736
+    MENUITEM "Выд. папкам значок выбранный в диалоге", em_vim_0737
+    MENUITEM "Выд. папке значок (из ico или exe внутри п-ки)", em_vim_0738
+    MENUITEM "Выд. папке значок (из exe или ico внутри п-ки)", em_vim_0739
+    MENUITEM "Отменить назначение значков выд. папкам", em_vim_0740
     MENUITEM SEPARATOR
     MENUITEM "Sort by &Name\tCtrl+F3", cm_SrcByName
     MENUITEM "Sort by E&xtension\tCtrl+F4", cm_SrcByExt
@@ -326,11 +408,12 @@ POPUP "&View"
 END_POPUP
 
 POPUP "&Commands"
+    MENUITEM "&Choose Internal command...", cm_CommandBrowser
+    MENUITEM "Отображение информ. пользовательских команд TC VIM ", em_vim_0735
     MENUITEM "Directory &Tree...\tAlt+F10", cm_CDtree
     MENUITEM "Set &Volume Label...", cm_VolumeId
     MENUITEM "System &Information...", cm_SysInfo
     MENUITEM "Background Transfer &Manager...", cm_OpenTransferManager
-    MENUITEM "&Choose Internal command...", cm_CommandBrowser
     MENUITEM "&Unload Plug-ins", cm_UnloadPlugins
     MENUITEM "&Watch Directory Changes", cm_SwitchWatchDirs
     MENUITEM "Ignore &Files on List", cm_SwitchIgnoreList
@@ -435,6 +518,38 @@ POPUP "Lister"
 END_POPUP
 
 POPUP "T&abs"
+    POPUP "Вк&ладки"
+        MENUITEM "Использов&ать вкладки папок: вкл/выкл", cm_VisDirTabs
+        MENUITEM SEPARATOR
+        MENUITEM "&Новая вкладка для текущей папки\tCtrl+T", cm_OpenNewTab
+        MENUITEM "Новая вкладка для текущей папки в &фоне\tCtrl+Shift+T", cm_OpenNewTabBg
+        MENUITEM "Блокировка/&Разблокировка вкладки", cm_ToggleLockCurrentTab
+        MENUITEM "&Частичная блокировка/Разблокировка", cm_ToggleLockDcaCurrentTab
+        MENUITEM SEPARATOR
+        MENUITEM "&Открыть папку в новой вкладке\tCtrl+вверх", cm_OpenDirInNewTab
+        MENUITEM "Открыть папку в новой вкладке (&другая панель)\tCtrl+Shift+вверх", cm_OpenDirInNewTabOther
+        MENUITEM SEPARATOR
+        MENUITEM "Загрузить вкладки из *.tab , удалив текущие", em_vim_0755
+        MENUITEM "Загрузить вкладки из *.tab , добавив к текущим", em_vim_0756
+        MENUITEM SEPARATOR
+        MENUITEM "Переключиться на &следующую вкладку\tCtrl+Tab", cm_SwitchToNextTab
+        MENUITEM "Переключиться на &предыдущую вкладку\tCtrl+Shift+Tab", cm_SwitchToPreviousTab
+        MENUITEM SEPARATOR
+        MENUITEM "&Закрыть вкладку\tCtrl+W", cm_CloseCurrentTab
+        MENUITEM "Закрыть &все вкладки\tCtrl+Shift+W", cm_CloseAllTabs
+        MENUITEM SEPARATOR
+        MENUITEM "Закрыть ВСЕ+забл. вкладки в Левой Панели", em_vim_0443
+        MENUITEM "Закрыть ВСЕ+забл. вкладки в Правой Панели", em_vim_0444
+        MENUITEM "Закрыть ВСЕ+забл. вкладки в Обеих Панелях", em_vim_0445
+        MENUITEM SEPARATOR
+        MENUITEM "Показать меню вкладки", em_vim_0527
+        MENUITEM SEPARATOR
+        MENUITEM "Настройка: Вкладки папок", cm_DirTabsConfig
+        MENUITEM SEPARATOR
+        MENUITEM "Вкл/Откл цвет активной вкладке (готвые цвета)", em_vim_0652
+        MENUITEM "Включить цвет активной вкладке (палитра)", em_vim_0786
+        MENUITEM "Отключить цвет активной вкладке", em_vim_0787
+    END_POPUP
     MENUITEM "New &Folder Tab\tCtrl+T", cm_OpenNewTab
     MENUITEM "New Folder Tab in &Background\tShift+Ctrl+T", cm_OpenNewTabBg
     MENUITEM "Load Folder Tabs from File &Under Cursor, Replace Tabs", em_ext_opentabs
@@ -517,31 +632,65 @@ POPUP "&Net"
         MENUITEM "&Show File User...", cm_ShowFileUser
         MENUITEM "&Open Program as Different User...", cm_OpenAsUser
     END_POPUP
+    POPUP "Соединение через LPT/USB-порт..."
+        MENUITEM "&Установить соединение через LPT/USB-порт...", cm_DirectCableConnect
+        MENUITEM "Установить д&райвер LPT (NT)", cm_NTinstallDriver
+        MENUITEM "Уда&лить драйвер LPT (NT)", cm_NTremoveDriver
+    END_POPUP
+    MENUITEM SEPARATOR
+    MENUITEM "FileZilla – FTP клиент", em_vim_0192
+    MENUITEM SEPARATOR
+    MENUITEM "&Соединиться с FTP-сервером...\tCtrl+F", cm_FtpConnect
+    MENUITEM "&Новое FTP-соединение...\tCtrl+N", cm_FtpNew
+    MENUITEM "&Разорвать FTP-соединение\tCtrl+Shift+F", cm_FtpDisconnect
+    MENUITEM "&Прервать текущую команду", cm_FtpAbort
+    MENUITEM "&Возобновить прерванную загрузку...", cm_FtpResumeDownload
+    MENUITEM SEPARATOR
+    MENUITEM "&Добавить в список загрузки...", cm_FtpAddToList
+    MENUITEM "Диспетчер &фоновой пересылки...", cm_OpenTransferManager
+    MENUITEM "&Загрузка по списку...", cm_FtpDownloadList
+    MENUITEM SEPARATOR
+    MENUITEM "Показывать скрытые ф&айлы на сервере", cm_FtpHiddenFiles
+    MENUITEM "Выбрать ре&жим передачи (Авто/Двоичный/Текст)\tCtrl+Shift+M", cm_FtpSelectTransferMode
 END_POPUP
 
 POPUP "&Preferences"
     MENUITEM "C&onfiguration...", cm_Config
-    POPUP "&Button Bars"
-        MENUITEM "Change &Button Bar...", cm_ButtonConfig
-        MENUITEM "Change Button Bar 2 (&Vertical)...", cm_ButtonConfig2
+    MENUITEM "М&енеджер плагинов TC Plugins Manager", em_vim_0157
+    MENUITEM SEPARATOR
+    POPUP "&Конфигурация"
+        MENUITEM "Загружать с Total Commander Панель по-умолчанию", em_vim_0489
+        MENUITEM "Загружать с Total Commander Панель пользователя", em_vim_0488
         MENUITEM SEPARATOR
-        MENUITEM "&Load Button Bar Under Cursor", em_ext_loadbar
-        MENUITEM "Load Button Bar &2 (Vertical) Under Cursor", em_ext_loadbar2
+        MENUITEM "32/64 переключать Total Commander ", em_vim_0567
         MENUITEM SEPARATOR
-        MENUITEM "&Remove Button Bar (Temporarily)", em_ext_bar4
-        MENUITEM "Remove B&utton Bar 2 (Temporarily)", em_ext_bar5
+        MENUITEM "Создать ярлык(и) для TC VIM и программ из него", em_vim_0651
+        MENUITEM "&Все программы из Total Commander по категориям", em_vim_0481
         MENUITEM SEPARATOR
-        MENUITEM "Language/&Menu Button Bar", em_ext_langbar
-        MENUITEM "&Internal Commands Button Bar", em_ext_bar3
-        MENUITEM "&Windows 10 Button Bar", em_ext_bar1
-        MENUITEM "Co&ntrol Panel Button Bar", em_ext_bar2
+        MENUITEM "&Регистрация программ и компонентов TC VIM", em_vim_0265
+        MENUITEM "&Очистка Total Commander", em_vim_0439
         MENUITEM SEPARATOR
-        MENUITEM "&Default Button Bar (default.bar)", em_ext_bar0
-        MENUITEM "D&efault Button Bar 2 (vertical.bar)", em_ext_bar6
-        MENUITEM "De&fault Button Bar (as Configured)", em_ext_bar0a
-        MENUITEM "Def&ault Button Bar 2 (as Configured)", em_ext_bar6a
+        MENUITEM "Выбрать цветовую схему типов файлов с Impomezia", em_vim_0134
+        MENUITEM "Вкл/Откл расцветку типов файлов", em_vim_0004
+        MENUITEM "Настройка тем в Меню MENUIMG", em_vim_0243
+        MENUITEM "Переключение вида, размера папок и значков дисков", em_vim_0449
+        MENUITEM SEPARATOR
+        MENUITEM "Добавить "Открыть в TC"в контекстное меню проводника", em_vim_0370
+        MENUITEM "Вкл/Откл "Сворачивать в системный трей"", em_vim_0468
+        MENUITEM SEPARATOR
+        MENUITEM "Вкл/Откл отображение информ. в заголовке окна TC", em_vim_0753
+        MENUITEM "Скрыть/Показать заголовок окна Total Commander", em_vim_0465
+        MENUITEM SEPARATOR
+        MENUITEM "Расцветка разделителей в Главном МЕНЮ (выбор цвета)", em_vim_0751
+        MENUITEM "Вкл/Откл загр-ку с TC расцветки разделителей в Гл.МЕНЮ", em_vim_0752
+        MENUITEM SEPARATOR
+        MENUITEM "Вкл/Откл отображение иконок в Главном МЕНЮ", em_vim_0653
+        MENUITEM "Вкл/Откл анимацию значков в Вертикальной Панели", em_vim_0727
+        MENUITEM "Вкл/Откл курсор на следующий файл при выд. пробелом", em_vim_0792
+        MENUITEM SEPARATOR
+        MENUITEM "x64: Отключить перенаправление System32->SysWOW&64", cm_SwitchX64Redirection
     END_POPUP
-    MENUITEM "Change Start Menu...", cm_ChangeStartMenu
+    MENUITEM SEPARATOR
     MENUITEM "&Save Position", cm_ConfigSavePos
     MENUITEM "Save History", cm_ConfigSaveDirHistory
     MENUITEM "Sa&ve Settings", cm_ConfigSaveSettings
@@ -549,6 +698,9 @@ POPUP "&Preferences"
         MENUITEM "Main and FTP Settings (Only &Notepad)...", cm_ConfigChangeIniFiles
         MENUITEM "&Main Settings...", em_ext_editwincmd
         MENUITEM "&FTP Settings (wcx_ftp.ini)...", em_ext_editwcx_ftp
+        MENUITEM "Редактировать главное меню", em_vim_2000
+        MENUITEM "Change Start Menu...", cm_ChangeStartMenu
+        MENUITEM "&Редактировать все файлы конфигурации", em_vim_2003
         MENUITEM "User &Commands (language\wcmd_win10amd64_1_eng.ini)...", em_ext_editextcmd
         MENUITEM "Common &User Commands (usercmd.ini)...", em_ext_editusercmd
         MENUITEM "Common &Packer Plugins (pkplugin.ini)...", em_ext_editpkplugins
@@ -576,6 +728,26 @@ POPUP "&Preferences"
         MENUITEM "Flat &User Interface", cm_VisFlatInterface
         MENUITEM "Windows &XP theme background", cm_VisXPThemeBackground
     END_POPUP
+    POPUP "&Button Bars"
+        MENUITEM "Change &Button Bar...", cm_ButtonConfig
+        MENUITEM "Change Button Bar 2 (&Vertical)...", cm_ButtonConfig2
+        MENUITEM SEPARATOR
+        MENUITEM "&Load Button Bar Under Cursor", em_ext_loadbar
+        MENUITEM "Load Button Bar &2 (Vertical) Under Cursor", em_ext_loadbar2
+        MENUITEM SEPARATOR
+        MENUITEM "&Remove Button Bar (Temporarily)", em_ext_bar4
+        MENUITEM "Remove B&utton Bar 2 (Temporarily)", em_ext_bar5
+        MENUITEM SEPARATOR
+        MENUITEM "Language/&Menu Button Bar", em_ext_langbar
+        MENUITEM "&Internal Commands Button Bar", em_ext_bar3
+        MENUITEM "&Windows 10 Button Bar", em_ext_bar1
+        MENUITEM "Co&ntrol Panel Button Bar", em_ext_bar2
+        MENUITEM SEPARATOR
+        MENUITEM "&Default Button Bar (default.bar)", em_ext_bar0
+        MENUITEM "D&efault Button Bar 2 (vertical.bar)", em_ext_bar6
+        MENUITEM "De&fault Button Bar (as Configured)", em_ext_bar0a
+        MENUITEM "Def&ault Button Bar 2 (as Configured)", em_ext_bar6a
+    END_POPUP
     POPUP "&Display"
         MENUITEM "Show &Hidden Files", cm_SwitchHid
         MENUITEM "Show &System Files", cm_SwitchSys
@@ -585,9 +757,8 @@ POPUP "&Preferences"
         MENUITEM "Sort Directories by N&ame", cm_SwitchDirSort
         MENUITEM "Auto S&witch Mode On/Off", cm_ToggleAutoViewModeSwitch
     END_POPUP
-    POPUP "Language/Menu"
+    POPUP "Select Language/Menu"
         MENUITEM "English with E&xtended Menu I", em_ext_openlanguagefile1
-        MENUITEM "English with Exten&ded Menu II", em_ext_openlanguagefile2
         MENUITEM SEPARATOR
         MENUITEM "Open Langua&ge/Menu File under Cursor", em_ext_openlanguagefile
         MENUITEM "Open Men&u File under Cursor", em_ext_openmenufile
@@ -597,24 +768,6 @@ POPUP "&Preferences"
         MENUITEM "Current Language with English Menu (Internal)", em_ext_openmenu
         MENUITEM "English Language && Menu (&External)*", em_ext_openlanguagefile0
         MENUITEM "Current Language &with English Menu (External)*", em_ext_openmenufile0
-        MENUITEM SEPARATOR
-        MENUITEM "Ceљtina (C&zech)*", em_ext_openlanguage_cz
-        MENUITEM "&Chinese (Simplified)*", em_ext_openlanguage_chn
-        MENUITEM "D&ansk*", em_ext_openlanguage_dan
-        MENUITEM "Deutsc&h*", em_ext_openlanguage_deu
-        MENUITEM "E&spaсol (Tradicional)*", em_ext_openlanguage_esp
-        MENUITEM "&Franзais*", em_ext_openlanguage_fra
-        MENUITEM "I&taliano*", em_ext_openlanguage_ita
-        MENUITEM "&Korean*", em_ext_openlanguage_kor
-        MENUITEM "Mag&yar (Tegezхs)*", em_ext_openlanguage_hun
-        MENUITEM "&Nederlands*", em_ext_openlanguage_dut
-        MENUITEM "Norsk (&Bokmеl)*", em_ext_openlanguage_nor
-        MENUITEM "&Polski*", em_ext_openlanguage_pol
-        MENUITEM "Ro&mвna*", em_ext_openlanguage_rom
-        MENUITEM "&Russian*", em_ext_openlanguage_rus
-        MENUITEM "S&lovenskэ (Slovak)*", em_ext_openlanguage_sk
-        MENUITEM "Sl&ovenski (Slovenian)*", em_ext_openlanguage_svn
-        MENUITEM "S&venska*", em_ext_openlanguage_swe
         MENUITEM SEPARATOR
         MENUITEM "* = if installed", em_ext_dummy
     END_POPUP
@@ -644,305 +797,6 @@ POPUP "&Preferences"
     MENUITEM "Pac&ker...", cm_PackerConfig
     MENUITEM "    &Zip Packer...", cm_ZipPackerConfig
     MENUITEM "&Misc...", cm_Confirmation
-END_POPUP
-
-POPUP "F&olders"
-    POPUP "&Virtual"
-        MENUITEM "&Desktop", cm_OpenDesktop
-        MENUITEM "&Libraries", em_ext_libraries
-        MENUITEM "&HomeGroup", em_ext_otherusers
-        MENUITEM "U&ser Files", em_ext_userfiles
-        MENUITEM "My Doc&uments", em_ext_documents
-        MENUITEM "This P&C", cm_OpenDrives
-        MENUITEM "&Network", cm_OpenNetwork
-        MENUITEM "Network (wor&kgroup)", em_ext_network_workgroup
-        MENUITEM "Con&trol Panel (Categories)", em_ext_controlpanelhome
-        MENUITEM "Recycle &Bin", cm_OpenRecycled
-        MENUITEM SEPARATOR
-        MENUITEM "Control Pan&el", cm_OpenControls
-        MENUITEM "&Administrative Tools", em_ext_administration
-        MENUITEM "De&vices and Printers", em_ext_devicesandprinters
-        MENUITEM "&Fonts", cm_OpenFonts
-        MENUITEM "Net&work Connections", em_ext_network_connections
-        MENUITEM "&Printers", cm_OpenPrinters
-        MENUITEM "Progra&ms and Features", em_ext_programsandfeatures
-        MENUITEM SEPARATOR
-        MENUITEM "&Offline Files", em_ext_cscfolder
-        MENUITEM "&Games", em_ext_gamefolder
-    END_POPUP
-    POPUP "&System"
-        MENUITEM "T&emporary Files (TEMP)", em_ext_temp
-        MENUITEM "&Windows", em_ext_systemroot
-        MENUITEM SEPARATOR
-        MENUITEM "P&rogram Files (64bit)", em_ext_programfiles
-        MENUITEM "Common Pr&ogram Files (64bit)", em_ext_commonprogramfiles
-        MENUITEM "&System32 (64bit)", em_ext_system32
-        MENUITEM SEPARATOR
-        MENUITEM "Pro&gram Files (32bit)", em_ext_programfilesx86
-        MENUITEM "Common Progr&am Files (32bit)", em_ext_commonprogramfilesx86
-        MENUITEM "S&ystem32 (32bit)", em_ext_system32x86
-        MENUITEM SEPARATOR
-        MENUITEM "&Fonts (Physical)", em_ext_fontfiles
-    END_POPUP
-    POPUP "&Personal"
-        MENUITEM "User Pr&ofile", em_ext_userprofile
-        MENUITEM "&Desktop", em_ext_mydesktop
-        MENUITEM "Doc&uments", em_ext_mydocuments
-        MENUITEM "Li&braries", em_ext_mylibraries
-        MENUITEM "&Pictures", em_ext_mypictures
-        MENUITEM "&Music", em_ext_mymusic
-        MENUITEM "&Videos", em_ext_myvideo
-        MENUITEM "&Application Data", em_ext_appdata
-        MENUITEM "Application Data (&Local)", em_ext_local_appdata
-        MENUITEM SEPARATOR
-        MENUITEM "&Start Menu", em_ext_startmenu
-        MENUITEM "    P&rograms", em_ext_programs
-        MENUITEM "        S&tartup", em_ext_startup
-        MENUITEM "&Quick Launch", em_ext_quicklaunch
-    END_POPUP
-    POPUP "&Common"
-        MENUITEM "User Pr&ofile", em_ext_public
-        MENUITEM "&Desktop", em_ext_common_desktopdirectory
-        MENUITEM "Shared Doc&uments", em_ext_common_documents
-        MENUITEM "Shared &Pictures", em_ext_common_pictures
-        MENUITEM "&Application Data", em_ext_common_appdata
-        MENUITEM SEPARATOR
-        MENUITEM "&Start Menu", em_ext_common_startmenu
-        MENUITEM "    P&rograms", em_ext_common_programs
-        MENUITEM "        S&tartup", em_ext_common_startup
-    END_POPUP
-    POPUP "&Total Commander"
-        MENUITEM "&Program", em_ext_commanderpath
-        MENUITEM "&Configuration", em_ext_commandercfg
-        MENUITEM "&Data", em_ext_commanderdata
-        MENUITEM "Data (&Local)", em_ext_commanderlocaldata
-    END_POPUP
-END_POPUP
-
-POPUP "&Файлы"
-    MENUITEM "Запустить объект под курсором с параметрами", em_vim_0146
-    MENUITEM "Запустить об/под курс. с параметрами (админ.)", em_vim_0147
-    MENUITEM SEPARATOR
-    MENUITEM "&Запуск файла под курсором\tEnter", cm_Return
-    MENUITEM "Запуск прогр&аммы от имени...", cm_OpenAsUser
-    MENUITEM "Открыть с помо&щью...", cm_Associate
-    MENUITEM "Внутренние ассо&циации (только в TC)...", cm_InternalAssociate
-    MENUITEM "&Метка диска...", cm_VolumeId
-    MENUITEM SEPARATOR
-    MENUITEM "Объект под курсором в автозагрузку с Windows", em_vim_0733
-    MENUITEM SEPARATOR
-    MENUITEM "Выделенным объектам назначить дату и время", em_vim_0800
-    MENUITEM "&Изменить Атрибуты...", cm_SetAttrib
-    MENUITEM "Изменить Атрибуты файлам  по типу (рекурсия)", em_vim_0566
-    MENUITEM "Показать диалог сво&йств\tAlt + Enter", cm_VersionInfo
-    MENUITEM "Информация о программе под курсором", em_vim_0459
-    MENUITEM "&Комментарий к файлу...\tCtrl+Z", cm_EditComment
-    MENUITEM "Подсчитать занимаемое &место", cm_GetFileSpace
-    MENUITEM SEPARATOR
-    MENUITEM "Синхронизовать Каталоги", cm_FileSync
-    MENUITEM SEPARATOR
-    MENUITEM "Сравнить по содер&жимому...", cm_CompareFilesByContent
-    MENUITEM "Сравнить внутр&енним инструментом...", cm_IntCompareFilesByContent
-    POPUP "Пе&чать"
-        MENUITEM "&Список файлов...", cm_PrintDir
-        MENUITEM "Список файлов с &подкаталогами...", cm_PrintDirSub
-        MENUITEM "&Файл (содержимое)\tCtrl+F9", cm_PrintFile
-    END_POPUP
-    MENUITEM SEPARATOR
-    MENUITEM "Быстрый просмотр в отдельном окне", em_vim_0793
-    MENUITEM "Просмотр с отк&лючёнными плагинами\tAlt+Shift+F3", cm_ListInternalOnly
-    MENUITEM SEPARATOR
-    MENUITEM "&Упаковать...\tAlt+F5", cm_PackFiles
-    MENUITEM "&Распаковать...\tAlt+F9", cm_UnpackFiles
-    MENUITEM "Протестировать ар&хив(ы)\tAlt+Shift+F9", cm_TestArchive
-    MENUITEM "Создать &ярлык...\tCtrl+Shift+F5", cm_CreateShortcut
-    MENUITEM SEPARATOR
-    MENUITEM "Разби&ть файл...", cm_Split
-    MENUITEM "Со&брать файлы...", cm_Combine
-    MENUITEM "Кодироват&ь (MIME, UUE, XXE)...", cm_Encode
-    MENUITEM "&Декодировать (MIME, UUE, XXE, BinHex)...", cm_Decode
-    MENUITEM "По&считать CRC-суммы (CRC32, MD5, SHA1)...", cm_CRCcreate
-    MENUITEM "Про&верить CRC-суммы (CRC32, MD5, SHA1)", cm_CRCcheck
-END_POPUP
-
-POPUP "Ви&д"
-    POPUP "Рас&ширенные настройки"
-        MENUITEM "Вертикальная Панель инстр&ументов: вкл/выкл", cm_VisButtonbar2
-        MENUITEM "Панель инстр&ументов: вкл/выкл", cm_VisButtonbar
-        MENUITEM SEPARATOR
-        MENUITEM "Кнопки диско&в: вкл/выкл", cm_VisDriveButtons
-        MENUITEM "Панели выбора дисков: &две/одна", cm_VisTwoDriveButtons
-        MENUITEM "Окн&о выбора диска: вкл/выкл", cm_VisDriveCombo
-        MENUITEM "Использов&ать вкладки папок: вкл/выкл", cm_VisDirTabs
-        MENUITEM "За&головок файловой панели: вкл/выкл", cm_VisCurDir
-        MENUITEM "Использовать &цепочки навигации: вкл/выкл", cm_VisBreadCrumbs
-        MENUITEM "Кнопки и&стории и избранных каталогов: вкл/выкл", cm_VisHistHotButtons
-        MENUITEM "&Заголовки табуляторов: вкл/выкл", cm_VisTabHeader
-        MENUITEM "Строка состоя&ния: вкл/выкл", cm_VisStatusbar
-        MENUITEM "&Командная строка: вкл/выкл", cm_VisCmdLine
-        MENUITEM "&Функциональные кнопки: вкл/выкл", cm_VisKeyButtons
-        MENUITEM SEPARATOR
-        MENUITEM "Кнопки дисков: плоские/о&бычные", cm_VisFlatDriveButtons
-        MENUITEM "Интерфейс основного окна: &плоский/обычный", cm_VisFlatInterface
-        MENUITEM "Стил&ь Windows XP/Vista/7 для фона: вкл/выкл", cm_VisXPThemeBackground
-        MENUITEM SEPARATOR
-        MENUITEM "Сортировать каталоги: по им&ени/как файлы", cm_SwitchDirSort
-        MENUITEM "Показывать длинные &имена: вкл/выкл", cm_SwitchLongNames
-        MENUITEM "Показывать скрытые/системные фа&йлы: вкл/выкл", cm_SwitchHidSys
-        MENUITEM "Показывать имена &8.3 в нижнем регистре: вкл/выкл", cm_Switch83Names
-        MENUITEM "Показывать овер&лейные значки: вкл/выкл", cm_SwitchOverlayIcons
-    END_POPUP
-    MENUITEM SEPARATOR
-    MENUITEM "&Краткий\tCtrl+F1", cm_SrcShort
-    MENUITEM "&Подробный\tCtrl+F2", cm_SrcLong
-    MENUITEM "Коммента&рии\tCtrl+Shift+F2", cm_SrcComments
-    MENUITEM "По&льзовательский набор колонок\tShift+F1", cm_SrcCustomViewMenu
-    MENUITEM "Пол&ьзовательский стиль оформления", cm_SrcViewModeList
-    MENUITEM "Автовыбор стиля оформления", em_vim_0789
-    MENUITEM "Просмотр &эскизов\tCtrl+Shift+F1", cm_SrcThumbs
-    MENUITEM "&Дерево каталогов\tCtrl+F8", cm_SrcTree
-    POPUP "Дерево в отдел&ьной панели\tCtrl+Shift+F8"
-        MENUITEM "&0 (Нет)", cm_SeparateTreeOff
-        MENUITEM "&1 (Одно для обеих панелей)", cm_SeparateTree1
-        MENUITEM "&2 (Два, по одному на панель)", cm_SeparateTree2
-        MENUITEM SEPARATOR
-        MENUITEM "&Переключить режим дерева", cm_SwitchSeparateTree
-        MENUITEM SEPARATOR
-    END_POPUP
-    MENUITEM SEPARATOR
-    MENUITEM "Показать размеры все&х папок\tAlt+Shift+Enter", cm_CountDirContent
-    MENUITEM "Обновить содер&жимое панели\tCtrl+R", cm_RereadSource
-    MENUITEM SEPARATOR
-    MENUITEM "Получатель &= Источнику", cm_MatchSrc
-    MENUITEM SEPARATOR
-    MENUITEM "Вс&е файлы\tCtrl+F10", cm_SrcAllFiles
-    MENUITEM "Програ&ммы\tCtrl+F11", cm_SrcExecs
-    MENUITEM "*.*", cm_SrcUserSpec
-    MENUITEM "&Фильтр...\tCtrl+F12", cm_SrcUserDef
-    MENUITEM "Показать только выделенные об&ъекты", cm_ShowOnlySelected
-    MENUITEM SEPARATOR
-    MENUITEM "По &имени\tCtrl+F3", cm_SrcByName
-    MENUITEM "По &типу\tCtrl+F4", cm_SrcByExt
-    MENUITEM "По дате/&времени\tCtrl+F5", cm_SrcByDateTime
-    MENUITEM "По ра&змеру\tCtrl+F6", cm_SrcBySize
-    MENUITEM "Без &сортировки\tCtrl+F7", cm_SrcUnsorted
-    MENUITEM SEPARATOR
-    MENUITEM "В обратном пор&ядке", cm_SrcNegOrder
-    MENUITEM SEPARATOR
-    MENUITEM "Раскрасить/снять раскраску выд. объектам\tCtrl+INS", em_vim_0736
-    MENUITEM "Выд. папкам значок выбранный в диалоге", em_vim_0737
-    MENUITEM "Выд. папке значок (из ico или exe внутри п-ки)", em_vim_0738
-    MENUITEM "Выд. папке значок (из exe или ico внутри п-ки)", em_vim_0739
-    MENUITEM "Отменить назначение значков выд. папкам", em_vim_0740
-END_POPUP
-
-POPUP "Вк&ладки"
-    MENUITEM "Использов&ать вкладки папок: вкл/выкл", cm_VisDirTabs
-    MENUITEM SEPARATOR
-    MENUITEM "&Новая вкладка для текущей папки\tCtrl+T", cm_OpenNewTab
-    MENUITEM "Новая вкладка для текущей папки в &фоне\tCtrl+Shift+T", cm_OpenNewTabBg
-    MENUITEM "Блокировка/&Разблокировка вкладки", cm_ToggleLockCurrentTab
-    MENUITEM "&Частичная блокировка/Разблокировка", cm_ToggleLockDcaCurrentTab
-    MENUITEM SEPARATOR
-    MENUITEM "&Открыть папку в новой вкладке\tCtrl+вверх", cm_OpenDirInNewTab
-    MENUITEM "Открыть папку в новой вкладке (&другая панель)\tCtrl+Shift+вверх", cm_OpenDirInNewTabOther
-    MENUITEM SEPARATOR
-    MENUITEM "Загрузить вкладки из *.tab , удалив текущие", em_vim_0755
-    MENUITEM "Загрузить вкладки из *.tab , добавив к текущим", em_vim_0756
-    MENUITEM SEPARATOR
-    MENUITEM "Переключиться на &следующую вкладку\tCtrl+Tab", cm_SwitchToNextTab
-    MENUITEM "Переключиться на &предыдущую вкладку\tCtrl+Shift+Tab", cm_SwitchToPreviousTab
-    MENUITEM SEPARATOR
-    MENUITEM "&Закрыть вкладку\tCtrl+W", cm_CloseCurrentTab
-    MENUITEM "Закрыть &все вкладки\tCtrl+Shift+W", cm_CloseAllTabs
-    MENUITEM SEPARATOR
-    MENUITEM "Закрыть ВСЕ+забл. вкладки в Левой Панели", em_vim_0443
-    MENUITEM "Закрыть ВСЕ+забл. вкладки в Правой Панели", em_vim_0444
-    MENUITEM "Закрыть ВСЕ+забл. вкладки в Обеих Панелях", em_vim_0445
-    MENUITEM SEPARATOR
-    MENUITEM "Показать меню вкладки", em_vim_0527
-    MENUITEM SEPARATOR
-    MENUITEM "Настройка: Вкладки папок", cm_DirTabsConfig
-    MENUITEM SEPARATOR
-    MENUITEM "Вкл/Откл цвет активной вкладке (готвые цвета)", em_vim_0652
-    MENUITEM "Включить цвет активной вкладке (палитра)", em_vim_0786
-    MENUITEM "Отключить цвет активной вкладке", em_vim_0787
-END_POPUP
-
-POPUP "&Сеть"
-    MENUITEM "Под&ключить сетевой диск...", cm_NetConnect
-    MENUITEM "&Отключить сетевой диск...", cm_NetDisconnect
-    MENUITEM "Открыть о&бщий доступ к каталогу...", cm_NetShareDir
-    MENUITEM "&Закрыть общий доступ к каталогу...", cm_NetUnshareDir
-    MENUITEM SEPARATOR
-    MENUITEM "Показать, кем открыт &файл по сети", cm_ShowFileUser
-    MENUITEM "Показать ресурсы а&дминистратора", cm_AdministerServer
-    MENUITEM SEPARATOR
-    POPUP "Соединение через LPT/USB-порт..."
-        MENUITEM "&Установить соединение через LPT/USB-порт...", cm_DirectCableConnect
-        MENUITEM "Установить д&райвер LPT (NT)", cm_NTinstallDriver
-        MENUITEM "Уда&лить драйвер LPT (NT)", cm_NTremoveDriver
-    END_POPUP
-    MENUITEM SEPARATOR
-    MENUITEM "FileZilla – FTP клиент", em_vim_0192
-    MENUITEM SEPARATOR
-    MENUITEM "&Соединиться с FTP-сервером...\tCtrl+F", cm_FtpConnect
-    MENUITEM "&Новое FTP-соединение...\tCtrl+N", cm_FtpNew
-    MENUITEM "&Разорвать FTP-соединение\tCtrl+Shift+F", cm_FtpDisconnect
-    MENUITEM "&Прервать текущую команду", cm_FtpAbort
-    MENUITEM "&Возобновить прерванную загрузку...", cm_FtpResumeDownload
-    MENUITEM SEPARATOR
-    MENUITEM "&Добавить в список загрузки...", cm_FtpAddToList
-    MENUITEM "Диспетчер &фоновой пересылки...", cm_OpenTransferManager
-    MENUITEM "&Загрузка по списку...", cm_FtpDownloadList
-    MENUITEM SEPARATOR
-    MENUITEM "Показывать скрытые ф&айлы на сервере", cm_FtpHiddenFiles
-    MENUITEM "Выбрать ре&жим передачи (Авто/Двоичный/Текст)\tCtrl+Shift+M", cm_FtpSelectTransferMode
-END_POPUP
-
-POPUP "&Конфигурация"
-    MENUITEM "&Настройка...", cm_Config
-    MENUITEM "Список ком&анд Total Commander...", cm_CommandBrowser
-    MENUITEM "Отображение информ. пользовательских команд TC VIM ", em_vim_0735
-    MENUITEM SEPARATOR
-    MENUITEM "М&енеджер плагинов TC Plugins Manager", em_vim_0157
-    MENUITEM "&Редактировать файлы конфигурации в AkelPad Image", em_vim_0474
-    MENUITEM "Редактировать все файлы конфигурации", em_vim_2003
-    MENUITEM "Редактировать главное меню", em_vim_2000
-    MENUITEM SEPARATOR
-    MENUITEM "Загружать с Total Commander Панель по-умолчанию", em_vim_0489
-    MENUITEM "Загружать с Total Commander Панель пользователя MAX", em_vim_0488
-    MENUITEM SEPARATOR
-    MENUITEM "32/64 переключать Total Commander ", em_vim_0567
-    MENUITEM SEPARATOR
-    MENUITEM "Создать ярлык(и) для TC VIM и программ из него", em_vim_0651
-    MENUITEM "&Все программы из Total Commander по категориям", em_vim_0481
-    MENUITEM SEPARATOR
-    MENUITEM "&Регистрация программ и компонентов TC VIM", em_vim_0265
-    MENUITEM "&Очистка Total Commander", em_vim_0439
-    MENUITEM SEPARATOR
-    MENUITEM "Выбрать цветовую схему типов файлов с Impomezia", em_vim_0134
-    MENUITEM "Вкл/Откл расцветку типов файлов", em_vim_0004
-    MENUITEM "Настройка тем в Меню MENUIMG", em_vim_0243
-    MENUITEM "Переключение вида, размера папок и значков дисков", em_vim_0449
-    MENUITEM SEPARATOR
-    MENUITEM "Добавить "Открыть в TC"в контекстное меню проводника", em_vim_0370
-    MENUITEM "Вкл/Откл "Сворачивать в системный трей"", em_vim_0468
-    MENUITEM SEPARATOR
-    MENUITEM "Вкл/Откл отображение информ. в заголовке окна TC", em_vim_0753
-    MENUITEM "Скрыть/Показать заголовок окна Total Commander", em_vim_0465
-    MENUITEM SEPARATOR
-    MENUITEM "Расцветка разделителей в Главном МЕНЮ (выбор цвета)", em_vim_0751
-    MENUITEM "Вкл/Откл загр-ку с TC расцветки разделителей в Гл.МЕНЮ", em_vim_0752
-    MENUITEM SEPARATOR
-    MENUITEM "Вкл/Откл отображение иконок в Главном МЕНЮ", em_vim_0653
-    MENUITEM "Вкл/Откл анимацию значков в Вертикальной Панели", em_vim_0727
-    MENUITEM "Вкл/Откл курсор на следующий файл при выд. пробелом", em_vim_0792
-    MENUITEM SEPARATOR
-    MENUITEM "x64: Отключить перенаправление System32->SysWOW&64", cm_SwitchX64Redirection
-    MENUITEM SEPARATOR
-    MENUITEM "Сохранить &позицию", cm_ConfigSavePos
-    MENUITEM "Со&хранить настройки", cm_ConfigSaveSettings
 END_POPUP
 
 POPUP "New..."
@@ -1522,6 +1376,8 @@ POPUP "Misc."
     END_POPUP
 END_POPUP
 
+MENUITEM SEPARATOR
+
 POPUP "±"
     MENUITEM "Убрать панельки", em_vim_0061
     MENUITEM "Активное окно", em_vim_0062
@@ -1546,9 +1402,78 @@ POPUP "±"
     MENUITEM "Удалить 5 крайних кнопок с активной панели", em_vim_0771
 END_POPUP
 
-POPUP "&Папки"
-    POPUP "= TC_VIM"
-        MENUITEM "Папка TC_VIM ", em_vim_0066
+POPUP "F&olders"
+    POPUP "&Папки"
+        POPUP "&Virtual"
+            MENUITEM "&Desktop", cm_OpenDesktop
+            MENUITEM "&Libraries", em_ext_libraries
+            MENUITEM "&HomeGroup", em_ext_otherusers
+            MENUITEM "U&ser Files", em_ext_userfiles
+            MENUITEM "My Doc&uments", em_ext_documents
+            MENUITEM "This P&C", cm_OpenDrives
+            MENUITEM "&Network", cm_OpenNetwork
+            MENUITEM "Network (wor&kgroup)", em_ext_network_workgroup
+            MENUITEM "Con&trol Panel (Categories)", em_ext_controlpanelhome
+            MENUITEM "Recycle &Bin", cm_OpenRecycled
+            MENUITEM SEPARATOR
+            MENUITEM "Control Pan&el", cm_OpenControls
+            MENUITEM "&Administrative Tools", em_ext_administration
+            MENUITEM "De&vices and Printers", em_ext_devicesandprinters
+            MENUITEM "&Fonts", cm_OpenFonts
+            MENUITEM "Net&work Connections", em_ext_network_connections
+            MENUITEM "&Printers", cm_OpenPrinters
+            MENUITEM "Progra&ms and Features", em_ext_programsandfeatures
+            MENUITEM SEPARATOR
+            MENUITEM "&Offline Files", em_ext_cscfolder
+            MENUITEM "&Games", em_ext_gamefolder
+        END_POPUP
+        POPUP "&System"
+            MENUITEM "T&emporary Files (TEMP)", em_ext_temp
+            MENUITEM "&Windows", em_ext_systemroot
+            MENUITEM SEPARATOR
+            MENUITEM "P&rogram Files (64bit)", em_ext_programfiles
+            MENUITEM "Common Pr&ogram Files (64bit)", em_ext_commonprogramfiles
+            MENUITEM "&System32 (64bit)", em_ext_system32
+            MENUITEM SEPARATOR
+            MENUITEM "Pro&gram Files (32bit)", em_ext_programfilesx86
+            MENUITEM "Common Progr&am Files (32bit)", em_ext_commonprogramfilesx86
+            MENUITEM "S&ystem32 (32bit)", em_ext_system32x86
+            MENUITEM SEPARATOR
+            MENUITEM "&Fonts (Physical)", em_ext_fontfiles
+        END_POPUP
+        POPUP "&Personal"
+            MENUITEM "User Pr&ofile", em_ext_userprofile
+            MENUITEM "&Desktop", em_ext_mydesktop
+            MENUITEM "Doc&uments", em_ext_mydocuments
+            MENUITEM "Li&braries", em_ext_mylibraries
+            MENUITEM "&Pictures", em_ext_mypictures
+            MENUITEM "&Music", em_ext_mymusic
+            MENUITEM "&Videos", em_ext_myvideo
+            MENUITEM "&Application Data", em_ext_appdata
+            MENUITEM "Application Data (&Local)", em_ext_local_appdata
+            MENUITEM SEPARATOR
+            MENUITEM "&Start Menu", em_ext_startmenu
+            MENUITEM "    P&rograms", em_ext_programs
+            MENUITEM "        S&tartup", em_ext_startup
+            MENUITEM "&Quick Launch", em_ext_quicklaunch
+        END_POPUP
+        POPUP "&Common"
+            MENUITEM "User Pr&ofile", em_ext_public
+            MENUITEM "&Desktop", em_ext_common_desktopdirectory
+            MENUITEM "Shared Doc&uments", em_ext_common_documents
+            MENUITEM "Shared &Pictures", em_ext_common_pictures
+            MENUITEM "&Application Data", em_ext_common_appdata
+            MENUITEM SEPARATOR
+            MENUITEM "&Start Menu", em_ext_common_startmenu
+            MENUITEM "    P&rograms", em_ext_common_programs
+            MENUITEM "        S&tartup", em_ext_common_startup
+        END_POPUP
+    END_POPUP
+    POPUP "&Total Commander / TC_VIM"
+        MENUITEM "&Program", em_ext_commanderpath
+        MENUITEM "&Configuration", em_ext_commandercfg
+        MENUITEM "&Data", em_ext_commanderdata
+        MENUITEM "Data (&Local)", em_ext_commanderlocaldata
         MENUITEM "Папка Programs", em_vim_0067
         MENUITEM "Папка Utilities", em_vim_0068
         MENUITEM "Папка Scripts", em_vim_0072
@@ -1622,52 +1547,6 @@ POPUP "&Папки"
     MENUITEM "Сравнить &каталоги             Shift+F2", cm_CompareDirs
     MENUITEM "Срав&нить,с учётом подкаталогов", cm_CompareDirsWithSubdirs
     MENUITEM "Срав&нить,скрыв одинаков. файлы", cm_DirMatch
-END_POPUP
-
-POPUP "Download"
-    MENUITEM "Загрузить игры из win 7 для win 10", em_vim_0754
-    MENUITEM "Загрузить DirectX 9.0c", em_vim_0124
-    MENUITEM "Microsoft .NET Framework 3.5", em_vim_0163
-    MENUITEM "Microsoft .NET Framework 4.6.2", em_vim_0164
-    MENUITEM "RuntimePack Full новая версия ", em_vim_0184
-    MENUITEM "Загрузить Adobe Flash", em_vim_0158
-    MENUITEM "Загрузить Microsoft Silverlight", em_vim_0159
-    MENUITEM "Загрузить Java", em_vim_0160
-    MENUITEM "Загрузить K-Lite Codec Pack", em_vim_0357
-    MENUITEM "Загрузить VirtualBox", em_vim_0268
-    MENUITEM "Сайт VirusTotal ", em_vim_0486
-    MENUITEM "Проверить выд. файлы на VirusTotal", em_vim_0482
-    MENUITEM "Открыть утилиту VirusTotalUploader", em_vim_0483
-    MENUITEM "Загрузить Microsoft Security Essentials", em_vim_0433
-    MENUITEM "Бесплатный антивирус Касперского", em_vim_0794
-    MENUITEM "Internet Explorer Коллекция Расширений", em_vim_0572
-    POPUP "Загрузить Драйверы"
-        MENUITEM "Загрузка драйверов NVIDIA", em_vim_0161
-        MENUITEM "Драйверы для видеокарт AMD (ATI)", em_vim_0162
-        MENUITEM "Центр загрузки Intel", em_vim_0366
-        MENUITEM "Загрузить Snappy Driver Installer", em_vim_0784
-    END_POPUP
-    POPUP "Загрузить Браузеры, Клиенты"
-        MENUITEM "Загрузить Opera", em_vim_0186
-        MENUITEM "Загрузить Google Chrome", em_vim_0187
-        MENUITEM "Загрузить Firefox", em_vim_0229
-        MENUITEM "Загрузить uTorrent", em_vim_0635
-        MENUITEM "Загрузить FileZilla – FTP клиент", em_vim_0790
-    END_POPUP
-    POPUP "Загрузить Архиваторы"
-        MENUITEM "Загрузить 7-Zip  с оф. сайта", em_vim_0777
-        MENUITEM "Загрузить 7-Zip  с diakov.net", em_vim_0783
-        MENUITEM "Загрузить 7-Zip  с oszone.net", em_vim_0534
-        MENUITEM "Загрузить WinRAR с diakov.net", em_vim_0778
-        MENUITEM "Загрузить WinRAR с oszone.net", em_vim_0535
-    END_POPUP
-    MENUITEM "Облако@mail.ru (размещение до 1TB) ", em_vim_0441
-    MENUITEM "Хостинг файлов без ожидания и капчи", em_vim_0442
-    MENUITEM "Загрузить Яндекс - Диск", em_vim_0779
-    MENUITEM "Загрузить утилиту «TCIMG»", em_vim_0233
-    MENUITEM "Тест интернет соединения", em_vim_0206
-    MENUITEM "Определить мои IP – адреса", em_vim_0371
-    MENUITEM "Инф.о настр.сетевой карты и IP адресе", em_vim_0511
 END_POPUP
 
 POPUP "Windows &10"
@@ -1997,6 +1876,52 @@ POPUP "PC&+"
     MENUITEM "Выйти из системы", em_vim_0127
     MENUITEM "Перезагрузка", em_vim_0129
     MENUITEM "Завершение работы", em_vim_0130
+END_POPUP
+
+POPUP "Download"
+    MENUITEM "Загрузить игры из win 7 для win 10", em_vim_0754
+    MENUITEM "Загрузить DirectX 9.0c", em_vim_0124
+    MENUITEM "Microsoft .NET Framework 3.5", em_vim_0163
+    MENUITEM "Microsoft .NET Framework 4.6.2", em_vim_0164
+    MENUITEM "RuntimePack Full новая версия ", em_vim_0184
+    MENUITEM "Загрузить Adobe Flash", em_vim_0158
+    MENUITEM "Загрузить Microsoft Silverlight", em_vim_0159
+    MENUITEM "Загрузить Java", em_vim_0160
+    MENUITEM "Загрузить K-Lite Codec Pack", em_vim_0357
+    MENUITEM "Загрузить VirtualBox", em_vim_0268
+    MENUITEM "Сайт VirusTotal ", em_vim_0486
+    MENUITEM "Проверить выд. файлы на VirusTotal", em_vim_0482
+    MENUITEM "Открыть утилиту VirusTotalUploader", em_vim_0483
+    MENUITEM "Загрузить Microsoft Security Essentials", em_vim_0433
+    MENUITEM "Бесплатный антивирус Касперского", em_vim_0794
+    MENUITEM "Internet Explorer Коллекция Расширений", em_vim_0572
+    POPUP "Загрузить Драйверы"
+        MENUITEM "Загрузка драйверов NVIDIA", em_vim_0161
+        MENUITEM "Драйверы для видеокарт AMD (ATI)", em_vim_0162
+        MENUITEM "Центр загрузки Intel", em_vim_0366
+        MENUITEM "Загрузить Snappy Driver Installer", em_vim_0784
+    END_POPUP
+    POPUP "Загрузить Браузеры, Клиенты"
+        MENUITEM "Загрузить Opera", em_vim_0186
+        MENUITEM "Загрузить Google Chrome", em_vim_0187
+        MENUITEM "Загрузить Firefox", em_vim_0229
+        MENUITEM "Загрузить uTorrent", em_vim_0635
+        MENUITEM "Загрузить FileZilla – FTP клиент", em_vim_0790
+    END_POPUP
+    POPUP "Загрузить Архиваторы"
+        MENUITEM "Загрузить 7-Zip  с оф. сайта", em_vim_0777
+        MENUITEM "Загрузить 7-Zip  с diakov.net", em_vim_0783
+        MENUITEM "Загрузить 7-Zip  с oszone.net", em_vim_0534
+        MENUITEM "Загрузить WinRAR с diakov.net", em_vim_0778
+        MENUITEM "Загрузить WinRAR с oszone.net", em_vim_0535
+    END_POPUP
+    MENUITEM "Облако@mail.ru (размещение до 1TB) ", em_vim_0441
+    MENUITEM "Хостинг файлов без ожидания и капчи", em_vim_0442
+    MENUITEM "Загрузить Яндекс - Диск", em_vim_0779
+    MENUITEM "Загрузить утилиту «TCIMG»", em_vim_0233
+    MENUITEM "Тест интернет соединения", em_vim_0206
+    MENUITEM "Определить мои IP – адреса", em_vim_0371
+    MENUITEM "Инф.о настр.сетевой карты и IP адресе", em_vim_0511
 END_POPUP
 
 HELP_BREAK
