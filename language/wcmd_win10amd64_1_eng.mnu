@@ -89,22 +89,6 @@ POPUP "&Files"
         MENUITEM "Print Directory with &Subdirs...", cm_PrintDirSub
         MENUITEM "Print File &Contents\tCtrl+F9", cm_PrintFile
     END_POPUP
-    POPUP "Cop&y Names"
-        MENUITEM "Copy &File Name to Clipboard", cm_CopyNamesToClip
-        MENUITEM "Copy &Path + File Name to Clipboard", cm_CopyFullNamesToClip
-        MENUITEM "Copy &Network Path + File Name to Clipboard", cm_CopyNetNamesToClip
-        MENUITEM SEPARATOR
-        MENUITEM "Copy File Name + All &Columns to Clipboard", cm_CopyFileDetailsToClip
-        MENUITEM "Copy Path + File Name + &All Columns to Clipboard", cm_CopyFpFileDetailsToClip
-        MENUITEM "Copy Network Path + File Name + All C&olumns to Clipboard", cm_CopyNetFileDetailsToClip
-        MENUITEM SEPARATOR
-        MENUITEM "Copy Fil&e Name + All Columns to File...", cm_SaveDetailsToFile
-        MENUITEM "Copy File Name + All Columns to File (Force ANS&I)...", cm_SaveDetailsToFileA
-        MENUITEM "Copy File Name + All Columns to File (Force &Unicode)...", cm_SaveDetailsToFileW
-        MENUITEM SEPARATOR
-        MENUITEM "Copy &Source Path to Clipboard", cm_CopySrcPathToClip
-        MENUITEM "Copy &Target Path to Clipboard", cm_CopyTrgPathToClip
-    END_POPUP
     POPUP "&Basic File Handling"
         MENUITEM "&Show (as Configured)...\tF3", cm_List
         MENUITEM "Show (Without P&lugins), File Under Cursor...\tShift+Alt+F3", cm_ListInternalOnly
@@ -188,6 +172,46 @@ POPUP "&Mark"
     MENUITEM "Go to Pr&evious Selected File", cm_GotoPrevSelected
     MENUITEM "Go to Next Selected File", cm_GotoNextSelected
     MENUITEM "Reread So&urce\tF2 / Ctrl+R", cm_RereadSource
+    MENUITEM SEPARATOR
+    POPUP "&Выделить"
+        MENUITEM "Вы&делить всё\tCtrl+Num +", cm_SelectAll
+        MENUITEM "Выделить только &файлы", cm_SelectAllFiles
+        MENUITEM "Выделить только &папки", cm_SelectAllFolders
+        MENUITEM "Сн&ять всё выделение\tCtrl+Num –", cm_ClearAll
+        MENUITEM "Выделить файлы/папки по &расширению\tAlt+Num +", cm_SelectCurrentExtension
+        MENUITEM SEPARATOR
+        MENUITEM "Снять Всё выделение в обеих Панелях", em_vim_0528
+        MENUITEM SEPARATOR
+        MENUITEM "Выделить "зеброй" все объекты", em_vim_0001
+        MENUITEM "&Инвертировать выделение\tNum *", cm_ExchangeSelection
+        MENUITEM SEPARATOR
+        MENUITEM "Выделить объекты по списку из буфера обмена", em_vim_0002
+        MENUITEM "Выделить одинаковые объекты в обеих панелях", em_vim_0388
+        MENUITEM "Выделить подобные объекты в другой панели", em_vim_0003
+        MENUITEM "Выд.по первым символам о/под курс.(к-во в диалоге)", em_vim_0728
+        MENUITEM "Выделить папки со значком как у папки под курсором", em_vim_0679
+        MENUITEM SEPARATOR
+        MENUITEM "Выделить элементы, где в именах есть русские буквы", em_vim_0358
+        MENUITEM "Заменить Русские буквы на Латинские + пробелы на _", em_vim_0277
+        MENUITEM SEPARATOR
+        MENUITEM "Показать все файлы без подкаталогов", cm_DirBranch
+        MENUITEM "Показать без подкаталогов  файлы в выделенном", cm_DirBranchSel
+        MENUITEM "Выделить всё с этим путём (режим без подкаталогов)", cm_SelectCurrentPath
+        MENUITEM "Снять выделение с этим путём (реж.без подкаталогов)", em_vim_0791
+        MENUITEM SEPARATOR
+        MENUITEM "Показать только выделенные об&ъекты", cm_ShowOnlySelected
+        MENUITEM "Показать в ДП объекты выд.ярлыков (во вкладках)", em_vim_0252
+        MENUITEM "Показать выделенное в ДП в отдельной вкладке", em_vim_0614
+        MENUITEM SEPARATOR
+        MENUITEM "Выде&лить группу...\tNum +", cm_SpreadSelection
+        MENUITEM "Снять выделение &группы...\tNum –", cm_ShrinkSelection
+        MENUITEM "Поменять местами панели (в&се вкладки)\tCtrl+Shift+U", cm_ExchangeWithTabs
+        MENUITEM SEPARATOR
+        MENUITEM "С&охранить выделение", cm_SaveSelection
+        MENUITEM "Восс&тановить выделение\tNum /", cm_RestoreSelection
+        MENUITEM "Со&хранить выделение в файл...", cm_SaveSelectionToFile
+        MENUITEM "Загрузить выделение из &файла...", cm_LoadSelectionFromFile
+    END_POPUP
     MENUITEM SEPARATOR
     POPUP "E&xpand Selection...\tNum +"
         MENUITEM "E&xpand Selection (as Configured)...\tNum +", cm_SpreadSelection
@@ -594,11 +618,28 @@ POPUP "T&abs"
     MENUITEM "C&onfigure Folder Tabs...", cm_DirTabsConfig
 END_POPUP
 
-POPUP "F&TP"
+POPUP "&Net"
+    MENUITEM "Show Network &Connections", cm_OpenNetwork
+    MENUITEM "Map &Network Drive...", cm_NetConnect
+    MENUITEM "&Disconnect Network Drives...", cm_NetDisconnect
+    MENUITEM "&Share Current Directory...", cm_NetShareDir
+    MENUITEM "&Unshare Directory...", cm_NetUnshareDir
+    MENUITEM "Show &Admin Shares", cm_AdministerServer
+    POPUP "N&TFS"
+        MENUITEM "&Permissions...", cm_EditPermissionInfo
+        MENUITEM "&File Auditing...", cm_EditAuditInfo
+        MENUITEM "&Take Ownership...", cm_EditOwnerInfo
+        MENUITEM SEPARATOR
+        MENUITEM "&Show File User...", cm_ShowFileUser
+        MENUITEM "&Open Program as Different User...", cm_OpenAsUser
+    END_POPUP
+    MENUITEM SEPARATOR
+    MENUITEM "FileZilla – FTP клиент", em_vim_0192
+    MENUITEM SEPARATOR
     MENUITEM "&Connect to Server...\tCtrl+F", cm_FtpConnect
     MENUITEM "&Disconnect from Server\tShift+Ctrl+F", cm_FtpDisconnect
     MENUITEM "&New Connection...\tCtrl+N", cm_FtpNew
-    MENUITEM "&Abort FTP Command", cm_FtpAbort
+    MENUITEM "&Abort FTP Command", cm_FtpAbort    
     MENUITEM SEPARATOR
     MENUITEM "&Resume Download...", cm_FtpResumeDownload
     MENUITEM "Add to Download &List...", cm_FtpAddToList
@@ -615,43 +656,6 @@ POPUP "F&TP"
     MENUITEM "Re&move PORT Driver (Windows NT)...", cm_NTremoveDriver
     MENUITEM SEPARATOR
     MENUITEM "C&onfigure FTP...", cm_FtpConfig
-END_POPUP
-
-POPUP "&Net"
-    MENUITEM "Show Network &Connections", cm_OpenNetwork
-    MENUITEM "Map &Network Drive...", cm_NetConnect
-    MENUITEM "&Disconnect Network Drives...", cm_NetDisconnect
-    MENUITEM "&Share Current Directory...", cm_NetShareDir
-    MENUITEM "&Unshare Directory...", cm_NetUnshareDir
-    MENUITEM "Show &Admin Shares", cm_AdministerServer
-    POPUP "N&TFS"
-        MENUITEM "&Permissions...", cm_EditPermissionInfo
-        MENUITEM "&File Auditing...", cm_EditAuditInfo
-        MENUITEM "&Take Ownership...", cm_EditOwnerInfo
-        MENUITEM SEPARATOR
-        MENUITEM "&Show File User...", cm_ShowFileUser
-        MENUITEM "&Open Program as Different User...", cm_OpenAsUser
-    END_POPUP
-    POPUP "Соединение через LPT/USB-порт..."
-        MENUITEM "&Установить соединение через LPT/USB-порт...", cm_DirectCableConnect
-        MENUITEM "Установить д&райвер LPT (NT)", cm_NTinstallDriver
-        MENUITEM "Уда&лить драйвер LPT (NT)", cm_NTremoveDriver
-    END_POPUP
-    MENUITEM SEPARATOR
-    MENUITEM "FileZilla – FTP клиент", em_vim_0192
-    MENUITEM SEPARATOR
-    MENUITEM "&Соединиться с FTP-сервером...\tCtrl+F", cm_FtpConnect
-    MENUITEM "&Новое FTP-соединение...\tCtrl+N", cm_FtpNew
-    MENUITEM "&Разорвать FTP-соединение\tCtrl+Shift+F", cm_FtpDisconnect
-    MENUITEM "&Прервать текущую команду", cm_FtpAbort
-    MENUITEM "&Возобновить прерванную загрузку...", cm_FtpResumeDownload
-    MENUITEM SEPARATOR
-    MENUITEM "&Добавить в список загрузки...", cm_FtpAddToList
-    MENUITEM "Диспетчер &фоновой пересылки...", cm_OpenTransferManager
-    MENUITEM "&Загрузка по списку...", cm_FtpDownloadList
-    MENUITEM SEPARATOR
-    MENUITEM "Показывать скрытые ф&айлы на сервере", cm_FtpHiddenFiles
-    MENUITEM "Выбрать ре&жим передачи (Авто/Двоичный/Текст)\tCtrl+Shift+M", cm_FtpSelectTransferMode
 END_POPUP
 
 POPUP "&Preferences"
@@ -713,13 +717,13 @@ POPUP "&Preferences"
         MENUITEM "&Button Bar", cm_VisButtonbar
         MENUITEM "Button Bar &2 (Vertical)", cm_VisButtonbar2
         MENUITEM "&Drive Buttons", cm_VisDriveButtons
-        MENUITEM "    T&wo Sets of Drive Buttons", cm_VisTwoDriveButtons
-        MENUITEM "    Flat Drive Button &Icons", cm_VisFlatDriveButtons
+        MENUITEM "· · · · T&wo Sets of Drive Buttons", cm_VisTwoDriveButtons
+        MENUITEM "· · · · Flat Drive Button &Icons", cm_VisFlatDriveButtons
         MENUITEM "Drive Co&mbobox", cm_VisDriveCombo
         MENUITEM "F&older Tabs", cm_VisDirTabs
         MENUITEM "&Current Directory", cm_VisCurDir
-        MENUITEM "    Br&eadcrumb Bar", cm_VisBreadCrumbs
-        MENUITEM "    &History and Hotlist Buttons", cm_VisHistHotButtons
+        MENUITEM "· · · · Br&eadcrumb Bar", cm_VisBreadCrumbs
+        MENUITEM "· · · · &History and Hotlist Buttons", cm_VisHistHotButtons
         MENUITEM "&Tabstop Header", cm_VisTabHeader
         MENUITEM "&Status Bar", cm_VisStatusbar
         MENUITEM "Command &Line", cm_VisCmdLine
@@ -743,8 +747,8 @@ POPUP "&Preferences"
         MENUITEM "&Windows 10 Button Bar", em_ext_bar1
         MENUITEM "Co&ntrol Panel Button Bar", em_ext_bar2
         MENUITEM SEPARATOR
-        MENUITEM "&Default Button Bar (default.bar)", em_ext_bar0
-        MENUITEM "D&efault Button Bar 2 (vertical.bar)", em_ext_bar6
+;;      MENUITEM "&Default Button Bar (default.bar)", em_ext_bar0
+;;      MENUITEM "D&efault Button Bar 2 (vertical.bar)", em_ext_bar6
         MENUITEM "De&fault Button Bar (as Configured)", em_ext_bar0a
         MENUITEM "Def&ault Button Bar 2 (as Configured)", em_ext_bar6a
     END_POPUP
@@ -763,39 +767,32 @@ POPUP "&Preferences"
         MENUITEM "Open Langua&ge/Menu File under Cursor", em_ext_openlanguagefile
         MENUITEM "Open Men&u File under Cursor", em_ext_openmenufile
         MENUITEM "Open Language/Menu Button Bar", em_ext_langbar
-        MENUITEM SEPARATOR
-        MENUITEM "English Language && Menu (&Internal)", em_ext_openlanguage
-        MENUITEM "Current Language with English Menu (Internal)", em_ext_openmenu
-        MENUITEM "English Language && Menu (&External)*", em_ext_openlanguagefile0
-        MENUITEM "Current Language &with English Menu (External)*", em_ext_openmenufile0
-        MENUITEM SEPARATOR
-        MENUITEM "* = if installed", em_ext_dummy
     END_POPUP
     MENUITEM SEPARATOR
     MENUITEM "Layout...", cm_Config
     MENUITEM "Display...", cm_DisplayConfig
-    MENUITEM "    Icons...", cm_IconConfig
-    MENUITEM "    Fo&nt...", cm_FontConfig
-    MENUITEM "    Colo&r...", cm_ColorConfig
-    MENUITEM "    T&abstops...", cm_ConfTabChange
-    MENUITEM "    &Folder Tabs...", cm_DirTabsConfig
-    MENUITEM "    C&ustom Columns...", cm_CustomColumnConfig
-    MENUITEM "        Configure current...", cm_CustomColumnDlg
-    MENUITEM "    View Modes...", cm_ConfigViewModes
-    MENUITEM "        Auto Switch Mode...", cm_ConfigViewModeSwitch
-    MENUITEM "    Lan&guage...", cm_LanguageConfig
+    MENUITEM "· · Icons...", cm_IconConfig
+    MENUITEM "· · Fo&nt...", cm_FontConfig
+    MENUITEM "· · Colo&r...", cm_ColorConfig
+    MENUITEM "· · T&abstops...", cm_ConfTabChange
+    MENUITEM "· · &Folder Tabs...", cm_DirTabsConfig
+    MENUITEM "· · C&ustom Columns...", cm_CustomColumnConfig
+    MENUITEM "· · · · Configure current...", cm_CustomColumnDlg
+    MENUITEM "· · View Modes...", cm_ConfigViewModes
+    MENUITEM "· · · · Auto Switch Mode...", cm_ConfigViewModeSwitch
+    MENUITEM "· · Lan&guage...", cm_LanguageConfig
     MENUITEM "Op&eration...", cm_Config2
-    MENUITEM "    Edit/Vie&w...", cm_EditConfig
-    MENUITEM "    Cop&y/Delete...", cm_CopyConfig
-    MENUITEM "    Refresh...", cm_RefreshConfig
-    MENUITEM "    &Quick Search...", cm_QuickSearchConfig
-    MENUITEM "    F&TP...", cm_FtpConfig
-    MENUITEM "    &Plugins...", cm_PluginsConfig
-    MENUITEM "    T&humbnails...", cm_ThumbnailsConfig
-    MENUITEM "    Log File...", cm_LogConfig
-    MENUITEM "    &Ignore List...", cm_IgnoreConfig
+    MENUITEM "· · Edit/Vie&w...", cm_EditConfig
+    MENUITEM "· · Cop&y/Delete...", cm_CopyConfig
+    MENUITEM "· · Refresh...", cm_RefreshConfig
+    MENUITEM "· · &Quick Search...", cm_QuickSearchConfig
+    MENUITEM "· · F&TP...", cm_FtpConfig
+    MENUITEM "· · &Plugins...", cm_PluginsConfig
+    MENUITEM "· · T&humbnails...", cm_ThumbnailsConfig
+    MENUITEM "· · Log File...", cm_LogConfig
+    MENUITEM "· · &Ignore List...", cm_IgnoreConfig
     MENUITEM "Pac&ker...", cm_PackerConfig
-    MENUITEM "    &Zip Packer...", cm_ZipPackerConfig
+    MENUITEM "· · &Zip Packer...", cm_ZipPackerConfig
     MENUITEM "&Misc...", cm_Confirmation
 END_POPUP
 
@@ -878,64 +875,27 @@ POPUP "Копировать"
     MENUITEM "Переключить Режим копирования : фоновый/обычный ", em_vim_0797
 END_POPUP
 
-POPUP "&Выделить"
-    MENUITEM "Вы&делить всё\tCtrl+Num +", cm_SelectAll
-    MENUITEM "Выделить только &файлы", cm_SelectAllFiles
-    MENUITEM "Выделить только &папки", cm_SelectAllFolders
-    MENUITEM "Сн&ять всё выделение\tCtrl+Num –", cm_ClearAll
-    MENUITEM "Выделить файлы/папки по &расширению\tAlt+Num +", cm_SelectCurrentExtension
+POPUP "Clipboard"
+    MENUITEM "Включить наблюдение за Clipboard - CLCL", em_vim_0502
+    MENUITEM "Включить наблюдение за Clipboard - TCIMG", em_vim_0432
+    MENUITEM "Очистить Clipboard", em_vim_0435
     MENUITEM SEPARATOR
-    MENUITEM "Снять Всё выделение в обеих Панелях", em_vim_0528
+    MENUITEM "Вкл/Откл загрузку с TC наблюдение за Clipboard", em_vim_0597
     MENUITEM SEPARATOR
-    MENUITEM "Выделить "зеброй" все объекты", em_vim_0001
-    MENUITEM "&Инвертировать выделение\tNum *", cm_ExchangeSelection
-    MENUITEM SEPARATOR
-    MENUITEM "Выделить объекты по списку из буфера обмена", em_vim_0002
-    MENUITEM "Выделить одинаковые объекты в обеих панелях", em_vim_0388
-    MENUITEM "Выделить подобные объекты в другой панели", em_vim_0003
-    MENUITEM "Выд.по первым символам о/под курс.(к-во в диалоге)", em_vim_0728
-    MENUITEM "Выделить папки со значком как у папки под курсором", em_vim_0679
-    MENUITEM SEPARATOR
-    MENUITEM "Выделить элементы, где в именах есть русские буквы", em_vim_0358
-    MENUITEM "Заменить Русские буквы на Латинские + пробелы на _", em_vim_0277
-    MENUITEM SEPARATOR
-    MENUITEM "Показать все файлы без подкаталогов", cm_DirBranch
-    MENUITEM "Показать без подкаталогов  файлы в выделенном", cm_DirBranchSel
-    MENUITEM "Выделить всё с этим путём (режим без подкаталогов)", cm_SelectCurrentPath
-    MENUITEM "Снять выделение с этим путём (реж.без подкаталогов)", em_vim_0791
-    MENUITEM SEPARATOR
-    MENUITEM "Показать только выделенные об&ъекты", cm_ShowOnlySelected
-    MENUITEM "Показать в ДП объекты выд.ярлыков (во вкладках)", em_vim_0252
-    MENUITEM "Показать выделенное в ДП в отдельной вкладке", em_vim_0614
-    MENUITEM SEPARATOR
-    MENUITEM "Выде&лить группу...\tNum +", cm_SpreadSelection
-    MENUITEM "Снять выделение &группы...\tNum –", cm_ShrinkSelection
-    MENUITEM "Поменять местами панели (в&се вкладки)\tCtrl+Shift+U", cm_ExchangeWithTabs
-    MENUITEM SEPARATOR
-    MENUITEM "С&охранить выделение", cm_SaveSelection
-    MENUITEM "Восс&тановить выделение\tNum /", cm_RestoreSelection
-    MENUITEM "Со&хранить выделение в файл...", cm_SaveSelectionToFile
-    MENUITEM "Загрузить выделение из &файла...", cm_LoadSelectionFromFile
-END_POPUP
-
-POPUP "Буфер"
-    MENUITEM "Включить наблюдение за «Буфером обмена» CLCL", em_vim_0502
-    MENUITEM "Включить наблюдение за «Буфером обмена» TCIMG", em_vim_0432
-    MENUITEM "Очистить « Буфер обмена »", em_vim_0435
-    MENUITEM SEPARATOR
-    MENUITEM "Вкл/Откл загрузку с TC наблюдение за «Буфером Обмена»", em_vim_0597
-    MENUITEM SEPARATOR
-    MENUITEM "Копировать имена &объектов в «Буфер обмена»", cm_CopyNamesToClip
-    MENUITEM "Копировать по&лные имена в «Буфер обмена»", cm_CopyFullNamesToClip
-    MENUITEM "Копировать чистые имена в «Буфер обмена»", em_vim_0005
-    MENUITEM "Копия переменных %путей% в «Буфер обмена»", em_vim_0006
-    MENUITEM "Копия переменных %%путей%% в «Буфер обмена»", em_vim_0165
+    MENUITEM "Copy &File Name to Clipboard", cm_CopyNamesToClip
+    MENUITEM "Copy &Path + File Name to Clipboard", cm_CopyFullNamesToClip
+    MENUITEM "Copy &Network Path + File Name to Clipboard", cm_CopyNetNamesToClip
+    MENUITEM "Копировать чистые имена в Clipboard", em_vim_0005
+    MENUITEM "Копия переменных %путей% в Clipboard", em_vim_0006
+    MENUITEM "Копия переменных %%путей%% в Clipboard", em_vim_0165
     MENUITEM SEPARATOR
     MENUITEM "Копировать "имена объектов" в кавычках", em_vim_0139
     MENUITEM "Копировать полные "имена объектов" в кавычках", em_vim_0140
     MENUITEM "Копировать чистые "имена объектов" в кавычках", em_vim_0141
     MENUITEM "Копия переменных "%путей%" в кавычках", em_vim_0142
     MENUITEM "Копия переменных "%%путей%%" в кавычках", em_vim_0513
+    MENUITEM "Copy &Source Path to Clipboard", cm_CopySrcPathToClip
+    MENUITEM "Copy &Target Path to Clipboard", cm_CopyTrgPathToClip
     MENUITEM SEPARATOR
     POPUP "Копия в буфер для Реестра"
         MENUITEM "¦¦¦¦   Копия в буфер "для Реестра"", em_vim_0145
@@ -1028,12 +988,15 @@ POPUP "Буфер"
     END_POPUP
     MENUITEM SEPARATOR
     POPUP "Копия в буфер "Колонки, Расширения, Имена, Шаблоны""
-        MENUITEM "Копировать со&держимое всех колонок в буфер", cm_CopyFileDetailsToClip
-        MENUITEM "Копировать все колонки (полн&ые пути) в буфер", cm_CopyFpFileDetailsToClip
-        MENUITEM "Копировать все коло&нки (UNC-пути) в буфер", cm_CopyNetFileDetailsToClip
+        MENUITEM "Copy File Name + All &Columns to Clipboard", cm_CopyFileDetailsToClip
+        MENUITEM "Copy Path + File Name + &All Columns to Clipboard", cm_CopyFpFileDetailsToClip
+        MENUITEM "Copy Network Path + File Name + All C&olumns to Clipboard", cm_CopyNetFileDetailsToClip
         MENUITEM SEPARATOR
-        MENUITEM "Сохранить содержимое всех колонок в файл (Юникод)", em_vim_0795
-        MENUITEM "Сохранить содержимое всех колонок в файл (ANSI)", em_vim_0796
+        MENUITEM "Copy Fil&e Name + All Columns to File...", cm_SaveDetailsToFile
+        MENUITEM "Copy File Name + All Columns to File (Force ANS&I)...", cm_SaveDetailsToFileA
+        MENUITEM "Copy File Name + All Columns to File (Force &Unicode)...", cm_SaveDetailsToFileW
+        MENUITEM "?? Сохранить содержимое всех колонок в файл (Юникод)", em_vim_0795
+        MENUITEM "?? Сохранить содержимое всех колонок в файл (ANSI)", em_vim_0796
         MENUITEM SEPARATOR
         MENUITEM "Копировать расширения файлов в буфер", em_vim_0007
         MENUITEM "Копировать расширения одной строкой  *.ext1;*.ext2;", em_vim_0269
@@ -1068,7 +1031,11 @@ POPUP "Буфер"
     MENUITEM "Содержимое текстового файла под курсором в «Буфер»", em_vim_0512
 END_POPUP
 
+MENUITEM SEPARATOR
+
 STARTMENU
+
+MENUITEM SEPARATOR
 
 POPUP "Специальные"
     MENUITEM "Создать тест-кнопку для TCIMG (параметры из буфера)", em_vim_0250
