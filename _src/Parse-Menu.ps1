@@ -1,13 +1,17 @@
-﻿#   Parse Total Commander menu file
+#   Parse Total Commander menu file
 #
 #   (c) 2017  @turboBasic
 #
 
 function Parse-Menu {
 
+    [CmdletBinding()]
     PARAM(
-      [PARAMETER( Mandatory )]
-      [ALIAS( "path" )]
+      [parameter( Mandatory, ValueFromPipeline )]
+      [string[]] $inputObject,
+
+      [parameter( Mandatory )]
+      [alias( "path" )]
       [string] $menuPath
     )
 
