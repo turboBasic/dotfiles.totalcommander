@@ -837,7 +837,6 @@ POPUP "Графика"
      MENUITEM "Изображение под курсором  в PhotoInstrument", em_vim_0475
      MENUITEM "Открыть PhotoInstrument (лекарство в папке "key")", em_vim_0054
      MENUITEM SEPARATOR
-     MENUITEM "Открыть выделенные изображения в FSViewe", em_vim_0476
      MENUITEM "Открыть FSViewer - графический редактор", em_vim_0055
 ;      MENUITEM SEPARATOR
 ;      MENUITEM "Открыть выделенные изображения в  XnView", em_vim_0889
@@ -871,6 +870,26 @@ END_POPUP
 
 
 STARTMENU
+
+POPUP "mao"
+    MENUITEM "Редактировать файлы конфигурации в Notepad++", em_mao_020
+    MENUITEM SEPARATOR
+END_POPUP
+
+POPUP "shells"
+    MENUITEM "cmd", em_mao_010
+    MENUITEM "cmd.admin", em_mao_011
+    MENUITEM "cmd @ cmder", em_mao_012
+    MENUITEM "cmd.admin @ cmder", em_mao_013
+    MENUITEM SEPARATOR
+    MENUITEM "powershell", em_mao_014
+    MENUITEM "powershell.admin", em_mao_015
+    MENUITEM "powershell @ cmder", em_mao_016
+    MENUITEM "powershell.admin @ cmder", em_mao_017
+    MENUITEM SEPARATOR
+    MENUITEM "powershell.noProfile", em_mao_018
+    MENUITEM "powershell.admin.noProfile", em_mao_019
+END_POPUP
 
 HELP_BREAK
 
