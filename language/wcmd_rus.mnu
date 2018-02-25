@@ -873,19 +873,18 @@ STARTMENU
 
 POPUP "mao"
     MENUITEM "Редактировать файлы конфигурации в Notepad++", em_mao_020
-    MENUITEM SEPARATOR
 END_POPUP
 
 POPUP "shells"
-    MENUITEM "cmd", em_mao_010
-    MENUITEM "cmd.admin", em_mao_011
-    MENUITEM "cmd @ cmder", em_mao_012
-    MENUITEM "cmd.admin @ cmder", em_mao_013
+    MENUITEM "cmd \t CAS+L", em_mao_cmd
+    MENUITEM "cmd.admin", em_mao_cmdAdmin
+    MENUITEM "cmd @ cmder \t C+L", em_mao_cmdCmder
+    MENUITEM "cmd.admin @ cmder \t CA+L", em_mao_cmdAdminCmder
     MENUITEM SEPARATOR
-    MENUITEM "powershell", em_mao_014
-    MENUITEM "powershell.admin", em_mao_015
-    MENUITEM "powershell @ cmder", em_mao_016
-    MENUITEM "powershell.admin @ cmder", em_mao_017
+    MENUITEM "powershell \t CAS+;", em_mao_powershell
+    MENUITEM "powershell.admin", em_mao_powershellAdmin
+    MENUITEM "powershell @ cmder \t C+;", em_mao_powershellCmder
+    MENUITEM "powershell.admin @ cmder \t CA+;", em_mao_powershellAdminCmder
     MENUITEM SEPARATOR
     MENUITEM "powershell.noProfile", em_mao_018
     MENUITEM "powershell.admin.noProfile", em_mao_019
