@@ -142,7 +142,7 @@ POPUP "&Конфигурация"
     MENUITEM SEPARATOR
 
     MENUITEM "М&енеджер плагинов TC Plugins Manager", em_vim_0157
-    MENUITEM "&Редактировать файлы конфигурации в Notepad++", em_vim_7474
+    MENUITEM "&Редактировать файлы конфигурации в Notepad++", em_mao_editConfig
     MENUITEM "Резервные Кнопки для Панелей Инструментов", em_vim_0925
     MENUITEM SEPARATOR
 
